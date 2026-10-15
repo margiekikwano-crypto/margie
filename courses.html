@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vocational School Courses - Bugema University</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            /* ===== ROOT COLORS - SAME AS SCREENSHOT ===== */
+            :root {
+                --navy: #0a1931;
+                --navy-light: #13294b;
+                --gold: #d4af37;
+                --gold-light: #f7d774;
+                --gold-bg: #fff8e1;
+                --bg: #f8f9fc;
+                --card-shadow: 0 8px 24px rgba(10, 25, 49, 0.08);
+            }
+   
+            body {
+                background: var(--bg);
+                color: var(--navy);
+            }
+
+
+            /* ===== TITLE SECTION ===== */
+            .title-section {
+                padding: 28px 4% 18px;
+                max-width: 1300px;
+                margin: 0 auto;
+            }
+            .title-section h1 {
+                font-size: 32px;
+                font-weight: 800;
+                color: #0f172a;
+                letter-spacing: -0.5px;
+                padding: 120px 20px 20px;
+            }
+            .title-section p {
+                color: #64748b;
+                font-size: 19px;
+                margin-top: 4px;
+            }
+
+            /* ===== SEARCH + FILTER BAR - MAIN FUNCTIONALITY ===== */
+            .toolbar {
+                max-width: 1300px;
+                margin: 0 auto;
+                padding: 0 4% 18px;
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .search-box {
+                position: relative;
+                flex: 1;
+                min-width: 260px;
+                max-width: 340px;
+            }
+            .search-box input {
+                width: 100%;
+                padding: 10px 14px 10px 36px;
+                border: 1.5px solid #e2e8f0;
+                border-radius: 10px;
+                font-size: 13px;
+                outline: none;
+                background: white;
+            }
+            .search-box input:focus {
+                border-color: var(--gold);
+            }
+            .search-box span {
+                position: absolute;
+                left: 11px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #94a3b8;
+            }
+            .filters {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .filter-btn {
+                padding: 7px 14px;
+                border-radius: 18px;
+                border: 1.5px solid #e2e8f0;
+                background: white;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.2s;
+                color: #334155;
+            }
+            .filter-btn.active {
+                background: var(--gold);
+                border-color: var(--gold);
+                color: var(--navy); /* Gold active like screenshot - All is gold */
+               
+            }
+            .sort-box span{
+                font-size: 15px;
+            }
+            .sort-box {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 12px;
+                color: #64748b;
+            }
+            .sort-box select {
+                border: 1px solid #e2e8f0;
+                padding: 6px 10px;
+                border-radius: 8px;
+                font-size: 12px;
+                font-weight: 600;
+                background: white;
+            }
+            /* ===== COURSE GRID ===== */
+            .grid-wrap {
+                max-width: 1300px;
+                margin: 0 auto;
+                padding: 0 4%;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            .card {
+                background: white;
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: var(--card-shadow);
+                border: 1px solid #eef2f7;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 14px 34px rgba(10, 25, 49, 0.12);
+            }
+            .card-img {
+                height: 155px;
+                position: relative;
+                overflow: hidden;
+                background: #e2e8f0;
+            }
+            .card-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .badge {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                background: var(--gold-bg);
+                color: #7a5d0a;
+                border: 1px solid var(--gold);
+                font-size: 10px;
+                font-weight: 800;
+                padding: 4px 10px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .card-body {
+                padding: 14px;
+            }
+            .card-body h3 {
+                font-size: 14px;
+                line-height: 1.3;
+                color: #0f172a;
+                min-height: 2px;
+            }
+            .meta {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+                font-size: 11px;
+                color: #64748b;
+            }
+            .meta span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .meta .enrolled {
+                color: #475569;
+                font-weight: 600;
+            }
+            .btn-view {
+                width: 100%;
+                background: var(--navy);
+                color: var(--gold-light);
+                border: none;
+                padding: 9px;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 12px;
+                cursor: pointer;
+                margin-top: 4px;
+            }
+            .btn-view:hover {
+                background: var(--navy-light);
+            }
+
+        .filter-btn{
+            font-size: 15px;
+        }
+            /* ===== MODAL - VIEW DETAILS FUNCTIONALITY ===== */
+            .modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(10, 25, 49, 0.75);
+                display: none;
+                place-items: center;
+                z-index: 999;
+                padding: 20px;
+            }
+            .modal-overlay.show {
+                display: grid;
+            }
+            .modal {
+                background: white;
+                max-width: 560px;
+                width: 100%;
+                border-radius: 16px;
+                overflow: hidden;
+                border: 2px solid var(--gold);
+            }
+            .modal-img {
+                height: 220px;
+                position: relative;
+            }
+            .modal-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .modal-close {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 18px;
+            }
+            .modal-body {
+                padding: 20px;
+            }
+            .modal-body h2 {
+                font-size: 20px;
+                color: var(--navy);
+            }
+            .modal-body p {
+                font-size: 13px;
+                color: #475569;
+                margin: 10px 0;
+                line-height: 1.5;
+            }
+            .modal-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 16px;
+            }
+            .modal-actions button {
+                flex: 1;
+                padding: 12px;
+                border-radius: 10px;
+                font-weight: 800;
+                border: none;
+                cursor: pointer;
+            }
+            .btn-enroll {
+                background: var(--gold);
+                color: var(--navy);
+            }
+            .btn-close2 {
+                background: #98bde2;
+                color: var(--navy);
+            }
+
+        
+        </style>
+    </head>
+    <body>
+
+        <!-- ============ HEADER ============ -->
+    <!--navigation bar-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+   <img  src="images/logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+    <h1>Bugema Vocation School</h1>
+
+  </div>
+    <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About</a></li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>📚</span>Courses</a></li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+
+        <!-- ============ TITLE ============ -->
+        <div class="title-section">
+            <h1>Vocational School Courses</h1>
+            <p>Hands-on training programs designed to build practical skills. Nationally certified. Ready for the workforce.</p>
+        </div>
+
+        <!-- ============ SEARCH + FILTERS + SORT - FULL FUNCTIONALITY ============ -->
+        <div class="toolbar">
+            <!-- SEARCH: filters by title, skill, keyword -->
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" id="searchInput" placeholder="Search courses, skills, topics...">
+            </div>
+
+            <!-- CATEGORY FILTERS: All, ICT, Tailoring etc like screenshot -->
+            <div class="filters" id="filterBar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ict">ICT</button>
+                <button class="filter-btn" data-filter="tailoring">Tailoring</button>
+                <button class="filter-btn" data-filter="electrical">Electrical</button>
+                <button class="filter-btn" data-filter="building">Building</button>
+                <button class="filter-btn" data-filter="automotive">Automotive</button>
+                <button class="filter-btn" data-filter="welding">Welding</button>
+            </div>
+
+            <!-- SORT: Recommended, Duration, Popular -->
+            <div class="sort-box">
+                <span>Sort:</span>
+                <select id="sortSelect">
+                    <option value="recommended">Recommended</option>
+                    <option value="duration">Duration: Short to Long</option>
+                    <option value="popular">Most Popular</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ============ COURSE GRID - 12 COURSES (6 visible like screenshot) ============ -->
+        <div class="grid-wrap">
+            <div class="grid" id="courseGrid">
+                <!-- Cards will be injected by JS - keeps code clean and dynamic -->
+            </div>
+        </div>
+
+       
+
+        <!-- ============ MODAL - VIEW DETAILS POPUP ============ -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-img">
+                    <img id="modalImg" src="">
+                    <button class="modal-close" id="modalClose">✕</button>
+                </div>
+                <div class="modal-body">
+                    <span class="badge" style="position:static">🎓 Certificate</span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDesc"></p>
+                    <div class="meta">
+                        <span id="modalDuration"></span>
+                        <span id="modalEnrolled"></span>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn-enroll" onclick="location.href='enroll.html'">Enroll Now</button>
+                        <button class="btn-close2" id="close2">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // =================== COURSE DATA - 12 COURSES ===================
+            // Add your HD photos here later - replace image links with your /images/ files
+            const courses = [
+                {
+                    id: 1,
+                    title: "ICT – Information & Communication Technology",
+                    category: "ict",
+                    duration: 2,
+                    enrolled: 1240,
+                    img: "images\\herobg3.jpg",
+                    desc: "Learn computer repair, networking, MS Office, internet, software installation. Hands-on lab training.",
+                },
+                {
+                    id: 2,
+                    title: "Tailoring Fashion & Garment Construction",
+                    category: "tailoring",
+                    duration: 2,
+                    enrolled: 980,
+                    img: "images/tailoring.jpg",
+                    desc: "Pattern drafting, sewing machines, fashion design, garment construction. Start your tailoring business.",
+                },
+                {
+                    id: 3,
+                    title: "Electrical Electrical Installation & Maintenance",
+                    category: "electrical",
+                    duration: 2,
+                    enrolled: 1102,
+                    img: "images/electrical.jpg",
+                    desc: "Wiring, solar installation, domestic & industrial electrical maintenance. Certified by UMEME.",
+                },
+                {
+                    id: 4,
+                    title: "Building Construction ",
+                    category: "building",
+                    duration: 2,
+                    enrolled: 875,
+                    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
+                    desc: "Brick laying, plastering, reading blueprints, site management. Build Uganda's future.",
+                },
+                {
+                    id: 5,
+                    title: "Automotive Motor Vehicle Mechanics",
+                    category: "automotive",
+                    duration: 2,
+                    enrolled: 1085,
+                    img: "images\\automotive2.jpg",
+                    desc: "Engine overhaul, diagnostics, electrical systems. Training with real cars in our garage.",
+                },
+                {
+                    id: 6,
+                    title: "Welding Metal Fabrication & Welding",
+                    category: "welding",
+                    duration: 2,
+                    enrolled: 740,
+                    img: "images\\welding.jpg",
+                    desc: "Arc, MIG, TIG welding, metal design, fabrication. High demand job in construction.",
+                },
+          
+                {
+                    id: 7,
+                    title: "Hair Dressing",
+                    category: "tailoring",
+                    duration: 2,
+                    enrolled: 620,
+                    img: "images/salon (2).jpg",
+                    desc: "Braiding, weaves, salon management, beauty therapy.",
+                },
+                {
+                    id: 8,
+                    title: "Plumbing",
+                    category: "plumbing",
+                    duration: 2,
+                    enrolled: 540,
+                    img: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600",
+                    desc: "Water systems, drainage, pipe installation.",
+                },
+                {
+                    id: 9,
+                    title: "Cateering",
+                    category: "cateering",
+                    duration: 2,
+                    enrolled: 890,
+                    img: "images/catering.jpg",
+                    desc: "Baking and Confinery",
+                },
+                {
+                    id: 10,
+                    title: "Carpentry",
+                    category: "building",
+                    duration: 2,
+                    enrolled: 430,
+                    img: "https://images.unsplash.com/photo-1416339442236-8ceb164046f8?w=600",
+                    desc: "Furniture making, roofing, wood work.",
+                },
+                {
+                    id: 11,
+                    title: "Secretarial",
+                    category: "secretarial",
+                    duration: 2,
+                    enrolled: 710,
+                    img: "images/sectarial.jpg",
+                    desc: "Boda boda repair, engine maintenance.",
+                },
+                {
+                    id: 12,
+                    title: "Accountant",
+                    category: "accountant",
+                    duration: 2,
+                    enrolled: 380,
+                    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600",
+                    desc: "Industrial welding, structural fabrication.",
+                },
+            ];
+
+            let currentFilter = "all";
+            let currentSearch = "";
+            let currentSort = "recommended";
+
+            // =================== RENDER FUNCTION - BUILDS CARDS ===================
+            function renderCourses() {
+                const grid = document.getElementById("courseGrid");
+                grid.innerHTML = "";
+
+                // 1. FILTER by category and search
+                let filtered = courses.filter((c) => {
+                    let matchCat = currentFilter === "all" || c.category === currentFilter;
+                    let matchSearch = c.title
+                        .toLowerCase()
+                        .includes(currentSearch.toLowerCase());
+                    return matchCat && matchSearch;
+                });
+
+                // 2. SORT
+                if (currentSort === "duration") {
+                    filtered.sort((a, b) => a.duration - b.duration);
+                } else if (currentSort === "popular") {
+                    filtered.sort((a, b) => b.enrolled - a.enrolled);
+                } // recommended = default order
+
+                // 3. RENDER
+                filtered.forEach((c) => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.innerHTML = `
+      <div class="card-img">
+        <img src="${c.img}" alt="${c.title}">
+        <span class="badge">🎓 Certificate & Diploma</span>
+      </div>
+      <div class="card-body">
+        <h3>${c.title}</h3>
+        <div class="meta">
+          <span style="font-size:14px">⏱ Duration: ${c.duration} Years</span>
+
+        </div>
+        <button class="btn-view" onclick="openModal(${c.id})">View Details →</button>
+      </div>
+    `;
+                    grid.appendChild(card);
+                });
+
+                // 4. UPDATE FOOTER COUNT
+                document.getElementById("footerInfo").innerText =
+                    `Showing ${filtered.length} of ${courses.length} courses • More programs available • Accredited by Ministry of Education & Sports, Uganda`;
+
+                // Show empty if none
+                if (filtered.length === 0) {
+                    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:#94a3b8">No courses found for "${currentSearch}" in ${currentFilter}</div>`;
+                }
+            }
+
+            // =================== EVENT LISTENERS - FULL INTERACTIVITY ===================
+
+            // Filter buttons click
+            document.querySelectorAll(".filter-btn").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    document
+                        .querySelectorAll(".filter-btn")
+                        .forEach((b) => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    currentFilter = btn.dataset.filter;
+                    renderCourses();
+                });
+            });
+
+            // Search input typing
+            document.getElementById("searchInput").addEventListener("input", (e) => {
+                currentSearch = e.target.value;
+                renderCourses();
+            });
+
+            // Sort dropdown change
+            document.getElementById("sortSelect").addEventListener("change", (e) => {
+                currentSort = e.target.value;
+                renderCourses();
+            });
+
+            // =================== MODAL - VIEW DETAILS ===================
+            function openModal(id) {
+                const c = courses.find((x) => x.id === id);
+                document.getElementById("modalImg").src = c.img;
+                document.getElementById("modalTitle").innerText = c.title;
+                document.getElementById("modalDesc").innerText = c.desc;
+                document.getElementById("modalDuration").innerText =
+                    `⏱ Duration: ${c.duration} Years`;
+                ;
+                document.getElementById("modalOverlay").classList.add("show");
+            }
+            document.getElementById("modalClose").onclick = () =>
+                document.getElementById("modalOverlay").classList.remove("show");
+            document.getElementById("close2").onclick = () =>
+                document.getElementById("modalOverlay").classList.remove("show");
+            document.getElementById("modalOverlay").onclick = (e) => {
+                if (e.target.id === "modalOverlay") e.target.classList.remove("show");
+            };
+
+            // =================== INIT - FIRST LOAD ===================
+            renderCourses();
+        </script>
+<!--Footer-->
+<footer style="margin-top: 40px;">
+  <div class="footer" style="margin-top: 20px;">
+    <p>&copy;Bugema University Vocation School Limited</p>
+    <h3>Contact:+256</h3>
+    <h3><a href="mailto:Email:bugemavoc@gmail.com"></a></h3>
+  </div>
+  <div class="links">
+    <ul class="nav-links">
+   <li><a class="active " href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="event.html">Events</a></li>
+    <li><a href="courses.html">Courses</a></li>
+      <li><a href="guild.html">Guild Council</a></li>
+  
+    </ul>
+  </div>
+ <div class="location">
+   <div class="info-item"><div><b>Location</b><br>Bugema University, Luwero District<br>32km along Gayaza-Zirobwe Road</div></div>
+      <div class="info-item"><div><b>Phone</b><br>0700 000 000 / 0775 000 000<br>Mon-Sat 8am-5pm</div></div>
+      <div class="info-item"><div><b>Email</b><br>vocational@bugemauniv.ac.ug</div></>
+      <div class="info-item"><div><b>Office Hours</b><br>Mon-Fri: 8am-5pm<br>Sat: 9am-1pm</div></div>
+ </div>
+</footer>
+<script src="js/script.js"></script>
+    </body>
+</html>

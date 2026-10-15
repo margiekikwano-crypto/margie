@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - Bugema University Vocational School</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+        <!--navigation bar-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+<img  src="images/logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+    <h1>Bugema University Vocational School</h1>
+
+  </div>
+    <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About</a></li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>📚</span>Courses</a></li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+
+
+        <div class="main-bg">
+            <div class="contact-page-title">
+                <h1>CONTACT US</h1>
+              
+            </div>
+
+            <div class="contact-content">
+                <!-- LEFT - SEND MESSAGE FORM -->
+                <div class="contact-card-form" style="background: linear-gradient(0deg, rgba(245, 245, 252, 0.5), rgba(21, 21, 22, 0.8)), url(/images/automotive2.jpg); background-position: center;background-size: cover;">
+                    <h3>Send Message</h3>
+      
+                    <div class="field">
+                        <label>Your Name *</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="field">
+                        <label>Phone / WhatsApp *</label>
+                        <input type="tel" id="phone" placeholder="+256 7XX XXX XXX">
+                    </div>
+
+                    <div class="field">
+                        <label>Email *</label>
+                        <input type="email" id="email" placeholder="yourname@example.com">
+                    </div>
+
+                    <div class="field">
+                        <label>Message *</label>
+                        <textarea id="message" rows="3" placeholder="I would like to inquire about the electrical workshop program..."></textarea>
+                    </div>
+
+                    <button class="contact-btn-send" onclick="sendMessage()">Send Message</button>
+                    <a href="#" id="whatsFormLink" class="contact-btn-whats-form">💬 Chat on WhatsApp</a>
+                </div>
+
+                <!-- RIGHT - INFO BOXES -->
+                <div class="contact-right-col">
+
+                    <div class="contact-info-box">
+                        <div class="contact-icon-circle">📍</div>
+                        <div><b>Location</b><span>Bugema University, Gayaza-Zirobwe Rd, Luweero District, Uganda</span></div>
+                    </div>
+
+                    <div class="contact-info-box">
+                        <div class="contact-icon-circle">📞</div>
+                        <div><b>Phone</b><span id="phoneText">+256 700 123 456 | +256 777 098 765</span><small>Mon - Fri: 8:00am - 5:00pm</small></div>
+                    </div>
+
+                    <div class="contact-info-box">
+                        <div class="contact-icon-circle">✉️</div>
+                        <div><b>Email</b><span>admissions@bugemauniv.ac.ug</span><small>support@bugemauniv.ac.ug</small></div>
+                    </div>
+
+                    <div class="contact-info-box map-box">
+                        <div class="map-top">📍 Find Us on Map</div>
+                        <div class="map-img" onclick="openGoogleMap()" style="cursor:pointer">
+                            <!-- MINI MAP PREVIEW - CLICK OPENS REAL MAP -->
+                            <div style="color:#64748b;font-size:12px;text-align:center">
+                                <div class="map-pin">📍</div>
+                                <div style="width:90px;height:50px;background:#334155;clip-path:polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%, 0% 20%);margin:4px auto"></div>
+                            </div>
+                            <small>Bugema University Campus</small>
+                            <a href="#" onclick="openGoogleMap()" class="view-maps">View on Google Maps</a>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <a href="tel:+256700123456" class="btn-call">✉️ Call Now</a>
+                        <a href="#" id="whatsCallLink" class="btn-whats">💬 WhatsApp</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    <!--Footer-->
+<footer>
+  <div class="footer">
+    <p>&copy;Bugema University Vocation School Limited</p>
+    <h3>Contact:+256</h3>
+    <h3><a href="mailto:Email:bugemavoc@gmail.com"></a></h3>
+  </div>
+  <div class="links">
+    <ul class="nav-links">
+   <li><a class="active " href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="event.html">Events</a></li>
+    <li><a href="courses.html">Courses</a></li>
+      <li><a href="guild.html">Guild Council</a></li>
+  
+    </ul>
+  </div>
+ <div class="location">
+   <div class="info-item"><div><b>Location</b><br>Bugema University, Luwero District<br>32km along Gayaza-Zirobwe Road</div></div>
+      <div class="info-item"><div><b>Phone</b><br>0700 000 000 / 0775 000 000<br>Mon-Sat 8am-5pm</div></div>
+      <div class="info-item"><div><b>Email</b><br>vocational@bugemauniv.ac.ug</div>
+      <div class="info-item"><div><b>Office Hours</b><br>Mon-Fri: 8am-5pm<br>Sat: 9am-1pm</div></div>
+ </div>
+</footer>
+<!--linking js-->
+    <script src="js/script.js"></script>
+
+        <script>
+            // =================== FULL FUNCTIONALITY - NOT STATIC ===================
+
+            // 1. SEND MESSAGE - VALIDATION + WHATSAPP + EMAIL
+            function sendMessage() {
+                const name = document.getElementById("name").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const msg = document.getElementById("message").value.trim();
+
+                // Validation - comment: check required fields
+                if (!name || !phone || !email || !msg) {
+                    alert("Please fill all fields marked with *");
+                    return;
+                }
+                if (!email.includes("@")) {
+                    alert("Please enter valid email");
+                    return;
+                }
+
+                // Build WhatsApp message - comment: sends to BUVS official number
+                const fullText = `Hello BUVS!%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${msg}`;
+                const whatsNumber = "256700123456"; // REPLACE WITH REAL BUVS WHATSAPP NUMBER
+                window.open(`https://wa.me/0763424261?text=${fullText}`, "_blank");
+
+                // Also show success
+                alert(
+                    `Thank you ${name}! Your message is sent. We will reply on WhatsApp / Email soon.`,
+                );
+
+                // Clear form
+                document.getElementById("name").value = "";
+                document.getElementById("phone").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("message").value = "";
+            }
+
+            // 2. CHAT ON WHATSAPP BUTTON - direct chat without form
+            document
+                .getElementById("whatsFormLink")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const whatsNumber = "256763424261"; // REPLACE
+                    window.open(
+                        `https://wa.me/${whatsNumber}?text=Hello%20Bugema%20Vocational%20School,%20I%20would%20like%20to%20inquire...`,
+                        "_blank",
+                    );
+                });
+            document
+                .getElementById("whatsCallLink")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const whatsNumber = "25763424261"; // REPLACE
+                    window.open(`https://wa.me/${whatsNumber}`, "_blank");
+                });
+
+            // 3. FIND US ON MAP - OPENS REAL GOOGLE MAPS
+            function openGoogleMap() {
+                // Real Bugema University location - comment: opens in new tab
+                const query = "Bugema University, Gayaza-Zirobwe Road, Luweero, Uganda";
+                window.open(
+                    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`,
+                    "_blank",
+                );
+            }
+
+            // 4. AUTO-FILL PHONE IN FORM FROM BUTTONS
+            // When user clicks phone boxes, copy number to form for easy editing
+            document.getElementById("phoneText").style.cursor = "pointer";
+            document.getElementById("phoneText").onclick = () => {
+                document.getElementById("phone").value = "+256 700 123 456";
+                document.getElementById("phone").focus();
+            };
+        </script>
+
+    </body>
+</html>

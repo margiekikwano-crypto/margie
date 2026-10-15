@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugema</title>
+    <!--linking css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--navigation bar-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+   <img  src="images\logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+    <h1>Bugema University Vocational School</h1>
+
+  </div>
+    <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About</a></li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>📚</span>Courses</a></li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+
+
+
+<!--Hero Image-->
+<section class="heroContent">
+    <img src="images/herobg.jpg" alt="heroImage" id="herobg">
+    <div class="content">
+      <h1>Welcome to  </h1> 
+      <h2>Bugema University </h2>
+           <h2>Vocational School</h2> 
+     <h3 id="herotext">A place where skills build futures </h3>
+  <!--  <div class="stats">
+      <div class="stat"><b>1200+</b><small>Students</small></div>
+      <div class="stat"><b>85+</b><small>Faculty</small></div>
+      <div class="stat"><b>98%</b><small>Grad Rate</small></div>
+    </div>-->
+      <div class="hero-btns">
+     <a href="enroll.html" class="btn-gold"><button>Apply Now</button></a>
+      <a href="courses.html" > <button class="btn-outline">View Courses</button></a>
+    
+    </div>
+    </div>
+  
+</section>
+    <div class="leaders">
+      <h2>Meet Our School Leaders</h2>
+      <div class="sub">Guided by experienced educators and industry professionals committed to excellence in vocational training.</div>
+      <div class="leader-grid">
+        <div class="leader-card"><span class="badge">DEAN</span><div class="leader-avatar"><img src=""></div><h4>Engineer Agaba</h4><small>Dean of Vocational Studies</small><p><b>Degree in Civil Engineering</b><br>12+ years advancing skills-based learning & curriculum development</p></div>
+        <div class="leader-card"><span class="badge">Princiapl</span><div class="leader-avatar"><img src=""></div><h4>Madam Nambalira Patience</h4><small>Principal</small><p><b>Chartered Engineer</b><br>Specializing in mechanical training, renewable energy systems & industry partnerships</p></div>
+        <div class="leader-card"><span class="badge">DeputyPrincipal</span><div class="leader-avatar"><img src=""></div><h4>Mr.Yiga </h4><small>Deputy Principal & Registrar</small><p><b>MBA, Innovation Lead</b><br>Fostering entrepreneurship, startups & job-readiness programs for students</p></div>
+      </div>
+    </div>
+   <!--scroll--> 
+<div id="scrollUp" style="position: fixed;bottom: 70px;  color: yellow; width: 70px; height: 50px; display:none;
+cursor: pointer; font-size: 70px; z-index: 999; text-align: center; right: 0;" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆
+</div>
+
+<!--Footer-->
+<footer>
+  <div class="footer">
+    <p>&copy;Bugema University Vocation School Limited</p>
+    <h3>Contact:+256</h3>
+    <h3><a href="mailto:Email:bugemavoc@gmail.com"></a></h3>
+  </div>
+  <div class="links">
+    <ul class="nav-links">
+   <li><a class="active " href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="event.html">Events</a></li>
+    <li><a href="courses.html">Courses</a></li>
+      <li><a href="guild.html">Guild Council</a></li>
+  
+    </ul>
+  </div>
+ <div class="location">
+   <div class="info-item"><div><b>Location</b><br>Bugema University, Luwero District<br>32km along Gayaza-Zirobwe Road</div></div>
+      <div class="info-item"><div><b>Phone</b><br>0700 000 000 / 0775 000 000<br>Mon-Sat 8am-5pm</div></div>
+      <div class="info-item"><div><b>Email</b><br>vocational@bugemauniv.ac.ug</div></>
+      <div class="info-item"><div><b>Office Hours</b><br>Mon-Fri: 8am-5pm<br>Sat: 9am-1pm</div></div>
+ </div>
+</footer>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ac62cf1d9662e34cb49fdb4/1k4b1v4sv';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--linking js-->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>guild-council</title>
+  <link rel="stylesheet" href="css/style.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Segoe UI;
+      }
+      body {
+        background: #f7f7f9;
+      }
+    
+
+      @media (max-width: 900px) {
+        .ministers {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+      <!--navigation bar-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+    <img  src="images\logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+  <h1>Bugema University Vocational School</h1>
+
+  </div>
+    <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About</a></li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>📚</span>Courses</a></li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+
+    <div class="title"><h1>GUILD COUNCIL • 2026/2027</h1><p>Bugema University Vocational School • Student Leadership Structure</p></div>
+
+    <div class="guild-org">
+      <div class="guild-row">
+        <div class="guild-card"  onclick="openM('Muyanga David','Guild President 2026-2027',
+                'David was born on 3rd May 2004, a son to Mr. Sseluyange & Mrs.Nansubaga Sarah. He attended his primary at Lugazi East primary School, went for his higher studies at SDA Secondary School Wobulenzi. Currently pursing a Certificate in Electriacl Installation & Maintenance at Bugema University Vocational School. Due to passion he is servicing as the Guild President of Bugema University  Vocational School, since he is a talented Musicain with Piano Skills also, he serves in Seventhday Adventists Choir.  As the Guild Presient, David is committed tofoster a comfortable, clean and an organised learning Environment by promoting discipline, unity and acting as a good example to others','images/guild-president.jpg')">
+          <span class="badge">GUILD PRESIDENT</span>
+          <img src="images/guild-president_2.jpg"><h4>Muyanga David</h4>
+          <small>Guild President</small><div class="role">Oversees Guild Affairs • Final Authority</div>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+      </div>
+      <div class="line-v"></div>
+      <div class="line-h"></div>
+      <div class="guild-row" style="margin-top:20px;">
+          <div class="guild-card" onclick="openM('Mulungi Tabither','Guild Speaker','Was Born on 12th feb ,2008 Nasana-Kyebando. Tabither is the voice of students in council, chairing guild sittings.','images/speaker_1.jpg')">
+          <span class="badge">SPEAKER</span>
+          <img src="images/speaker_1.jpg"><h4></h4><small>Guild Speaker</small>
+          <div class="role">Parliamentary • Regulations</div>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+        <div class="guild-card"  onclick="openM('Ssekyewa Victor','Vice President','Was Born on 12th feb ,2008 Nasana-Kyebando. Tabither is the voice of students in council, chairing guild sittings.','images/vice.jpg')">
+          <span class="badge">VICE PRESIDENT</span>
+          <img src="images/vice.jpg">
+          <h4>Ssekyewa Victor</h4>
+          <small>Vice President</small><div class="role">Deputy & Operations • Finance</div>
+          <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+
+          <div class="guild-card">
+          <span class="badge">Chief Justice</span>
+          <img src="images/justice.jpg"><h4>David</h4><small>Guild Speaker</small>
+          <div class="role">Parliamentary • Regulations</div>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+      </div>
+      <div class="line-v" style="margin-top:20px;"></div>
+      <div class="line-h" style="margin-top:20px;"></div>
+      <div class="ministers">
+        <div class="guild-card" onclick="openM('Namutebi Lisa','General Secretary Executive','Leading digital innovation and Guild media.','images/Gen-secretary.jpg')" >
+          <span class="badge">Secretary</span>
+          <img src="images/Gen-secretary.jpg"><h4>Namutebi Lisa</h4><small>Executive Secretary</small>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+        <div class="guild-card">
+          <span class="badge" style="background:#0a7d3e;">SPORTS</span>
+          <img src="sports.jpg"><h4>David K.</h4>
+          <small>Sports</small>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+        <div class="guild-card"  onclick="openM('Nagudi Vidah','Chapel Minister','Co-ordinating Students in prayer and all spititual Affairs',  'images/charpelminster.jpg')">
+          <span class="badge" style="background:#6a1b9a;">Chapel Minister</span>
+          <img src="images/charpelminster.jpg"><h4>Nagudi Vidah</h4><small>Chapel Minister</small>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+        <div class="guild-card">
+          <span class="badge" style="background:#0e0d0d;">FINANCE</span>
+          <img src="finance.jpg"><h4>Phiona</h4>
+          <small>Finance Minister</small>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+        <div class="guild-card">
+          <span class="badge">WELFARE</span>
+          <img src="welfare.jpg"><h4>Grace N.</h4><small>Welfare</small>
+           <p style="color: green; font-weight: bolder;">More Details➡</p>
+        </div>
+      </div>
+    </div>
+
+    
+          <!-- MODAL -->
+        <div class="gc-modal" id="gcModal" onclick="this.style.display='none'">
+            <div class="gc-modal-box" onclick="event.stopPropagation()">
+                <img id="mmImg" src="">
+                <h3 id="mmName" style="color:#003366;margin-top:12px"></h3>
+                <p id="mmRole" style="color:#f7b100;font-weight:800;font-size:12px;margin:4px 0"></p>
+                <p id="mmBio" style="font-size:13px;color:#555;margin-top:10px;line-height:1.6"></p>
+                <button onclick="document.getElementById('gcModal').style.display='none'" style="margin-top:16px;background:#003366;color:white;border:none;padding:10px 22px;border-radius:25px;font-weight:700;cursor:pointer">Close</button>
+            </div>
+        </div>
+<!--Footer-->
+<footer>
+  <div class="footer">
+    <p>&copy;Bugema University Vocation School Limited</p>
+    <h3>Contact:+256</h3>
+    <h3><a href="mailto:Email:bugemavoc@gmail.com"></a></h3>
+  </div>
+  <div class="links">
+    <ul class="nav-links">
+   <li><a class="active " href="index.html">Home</a></li>
+    <li><a href="aboutus.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="event.html">Events</a></li>
+    <li><a href="courses.html">Courses</a></li>
+      <li><a href="guild.html">Guild Council</a></li>
+  
+    </ul>
+  </div>
+ <div class="location">
+   <div class="info-item"><div><b>Location</b><br>Bugema University, Luwero District<br>32km along Gayaza-Zirobwe Road</div></div>
+      <div class="info-item"><div><b>Phone</b><br>0700 000 000 / 0775 000 000<br>Mon-Sat 8am-5pm</div></div>
+      <div class="info-item"><div><b>Email</b><br>vocational@bugemauniv.ac.ug</div></>
+      <div class="info-item"><div><b>Office Hours</b><br>Mon-Fri: 8am-5pm<br>Sat: 9am-1pm</div></div>
+ </div>
+</footer>
+    <script>
+            function openM(name, role, bio, img) {
+                document.getElementById("mmName").innerText = name;
+                document.getElementById("mmRole").innerText = role;
+                document.getElementById("mmBio").innerText = bio;
+                document.getElementById("mmImg").src = img;
+                document.getElementById("gcModal").style.display = "flex";
+            }
+        </script>
+<script src="js/script.js"></script>
+  </body>
+  </html>

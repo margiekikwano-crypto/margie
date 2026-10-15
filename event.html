@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events - Bugema University Vocational School</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+                     .event-hero {
+                background: linear-gradient(0deg, rgba(26, 35, 126, 0.10), rgba(26, 35, 126, 0.8)),
+                    url("images/sports.jpg");
+                 background-size: cover;
+                background-position: center;
+                  padding:150px 10% 150px;
+                text-align: center;
+                color: white;
+           
+                
+            }
+           
+        </style>
+    </head>
+    <body>
+
+    <!--navigation bar-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+   <img  src="images\logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+    <h1>Bugema University Vocational School</h1>
+
+  </div>
+    <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About</a></li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>📚</span>Courses</a></li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+
+        <section class="event-hero">
+            <h2>Upcoming Events</h2>
+            <p>Search academic, sports, and vocational events</p>
+            <div class="event-search-box">
+                <span>🔍</span>
+                <input type="text" id="searchInput" placeholder="Search events, workshops, programs..." onkeyup="searchEvents()">
+            </div>
+            <div class="event-filters">
+                <button class="active" onclick="filterEvents('all', this)">All</button>
+                <button onclick="filterEvents('academic', this)">Academic</button>
+                <button onclick="filterEvents('sports', this)">Sports</button>
+                <button onclick="filterEvents('vocational', this)">Vocational</button>
+            </div>
+        </section>
+
+        <section class="event-section">
+            <div class="event-section-head"><h3>Featured Events</h3></div>
+            <div class="event-grid" id="eventGrid">
+                <div class="event-card" data-category="vocational">
+                    <div class="event-card-top"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80"><div class="event-badge-cat">VOCATIONAL</div></div>
+                    <div class="event-card-body"><h4>Engineering Workshop: Solar Power Systems</h4><div class="event-meta">🕒 9:00 AM — 3:00 PM</div><div class="event-meta">📍 Technical Lab, Main Campus</div>
+                </div>
+                  <div class="actions">
+                     <button class="btn-blue" onclick="addToCal('Sports Day','2027-03-05T08:00:00','Play Ground Bugema')">Add to Calendar</button>
+              <button class="btn-light" onclick="watchVideo('https://www.w3schools.com/html/movie.mp4','Sports Highlights')">Watch Highlights</button>
+              </div>
+                </div>
+                <div class="event-card" data-category="sports">
+                    <div class="event-card-top"><img src="images/sports.jpg">><div class="event-badge-cat">SPORTS</div></div>
+                    <div class="event-card-body"><h4>Inter-Collegiate Sports Tournament</h4><div class="event-meta">🕒 8:00 AM — 5:00 PM</div><div class="event-meta">📍 Sports Ground</div></div>
+                      <div class="actions">
+        <button class="btn-blue" onclick="addToCal('Sports Day','2027-03-05T08:00:00','Play Ground Bugema')">Add to Calendar</button>
+        <button class="btn-light" onclick="watchVideo('https://www.w3schools.com/html/movie.mp4','Sports Highlights')">Watch Highlights</button>
+      </div>
+                </div>
+                <div class="event-card" data-category="academic">
+                    <div class="event-card-top"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80"><div class="event-badge-cat">ACADEMIC</div></div>
+                    <div class="event-card-body"><h4>Academic Career Fair 2025</h4><div class="event-meta">🕒 10:00 AM — 4:00 PM</div><div class="event-meta">📍 Conference Hall</div></div>
+                </div>
+                <div class="event-card" data-category="vocational">
+                    <div class="event-card-top"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80"><div class="event-badge-cat">VOCATIONAL</div></div>
+                    <div class="event-card-body"><h4>Catering: Christmas Baking Competition</h4><div class="event-meta">🕒 9:00 AM — 2:00 PM</div><div class="event-meta">📍 Catering Kitchen</div></div>
+                </div>
+            </div>
+            <div id="noResult">😕 No events found for your search</div>
+        </section>
+       
+        <!-- VIDEO MODAL -->
+<div id="videoModal" onclick="if(event.target===this)closeVideo()">
+  <div class="modal-box">
+    <span class="closeV" onclick="closeVideo()">×</span>
+    <video id="eventVideo" controls></video>
+    <div style="padding:12px;"><h4 id="videoTitle" style="margin:0; font-size:14px;"></h4></div>
+  
+</div>
+
+</div>
+        
+<!--Footer-->
+<footer>
+  <div class="footer">
+    <p>&copy;Bugema University Vocation School Limited</p>
+    <h3>Contact:+256</h3>
+    <h3><a href="mailto:Email:bugemavoc@gmail.com"></a></h3>
+  </div>
+  <div class="links">
+    <ul class="nav-links">
+   <li><a class="active " href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="event.html">Events</a></li>
+    <li><a href="courses.html">Courses</a></li>
+      <li><a href="guild.html">Guild Council</a></li>
+  
+    </ul>
+  </div>
+ <div class="location">
+   <div class="info-item"><div><b>Location</b><br>Bugema University, Luwero District<br>32km along Gayaza-Zirobwe Road</div></div>
+      <div class="info-item"><div><b>Phone</b><br>0700 000 000 / 0775 000 000<br>Mon-Sat 8am-5pm</div></div>
+      <div class="info-item"><div><b>Email</b><br>vocational@bugemauniv.ac.ug</div></>
+      <div class="info-item"><div><b>Office Hours</b><br>Mon-Fri: 8am-5pm<br>Sat: 9am-1pm</div></div>
+ </div>
+</footer>
+<script src="js/script.js"></script>
+    </body>
+</html>
