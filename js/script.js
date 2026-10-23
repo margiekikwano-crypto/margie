@@ -23,8 +23,10 @@ function renderSlide(){
     current = (current + 1) % heroSlides.length
  
 }
-renderSlide()
-setInterval(renderSlide,3000)
+if (heroBgImage && heroText) {
+  renderSlide()
+  setInterval(renderSlide,3000)
+}
 
 
 
@@ -59,11 +61,22 @@ function saveLocal(data){
         document.body.style.overflow = document.getElementById("drawer").classList.contains("open") ? 'hidden' :'';
     }
 
-// scrolling up
-window.onscroll =  ()=>{
-  document.getElementById('scrollUp').style.display = window.scrollY >400 ? "flex" :"none"
-  
-}
+// Shared back-to-top control
+const scrollTopButton = document.createElement('button');
+scrollTopButton.type = 'button';
+scrollTopButton.className = 'scroll-top';
+scrollTopButton.setAttribute('aria-label', 'Back to top');
+scrollTopButton.textContent = '↑';
+scrollTopButton.hidden = true;
+document.body.appendChild(scrollTopButton);
+
+scrollTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  scrollTopButton.hidden = window.scrollY <= 250;
+}, { passive: true });
 
 
 // Event functionalities

@@ -21,6 +21,15 @@
           grid-template-columns: repeat(2, 1fr);
         }
       }
+      @media (max-width: 600px) {
+        .ministers {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .title p {
+          white-space: normal;
+          padding: 0 12px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -140,29 +149,46 @@
             </div>
         </div>
 <!--Footer-->
-<footer>
-  <div class="footer">
-    <p>&copy;Bugema University Vocation School Limited</p>
-    <h3>Contact:+256</h3>
-    <h3><a href="mailto:Email:bugemavoc@gmail.com"></a></h3>
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer-brand-link" href="index.html">
+        <span>Bugema University<strong>Vocational School</strong></span>
+      </a>
+      <p>Hands-on training for meaningful work, entrepreneurship, and service.</p>
+      
+      <div class="footer-socials" aria-label="Social media searches">
+        <a href="https://www.facebook.com/search/top?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Facebook"><span class="social-facebook" aria-hidden="true">f</span></a>
+        <a href="https://www.tiktok.com/search?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on TikTok"><span class="social-tiktok" aria-hidden="true">♪</span></a>
+        <a href="https://www.google.com/search?q=Bugema+University+Vocational+School" target="_blank" rel="noopener noreferrer" aria-label="Search Google for Bugema University Vocational School"><span class="social-google" aria-hidden="true">G</span></a>
+        <a href="https://www.instagram.com/explore/search/keyword/?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r=".8" class="instagram-dot"/></svg></a>
+      </div>
+    </div>
+    <nav class="footer-column" aria-label="Footer navigation">
+      <h2>Explore</h2>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="guild.html">Guild Council</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="footer-column footer-contact">
+      <h2>Visit &amp; Contact</h2>
+      <address>
+        <p><strong>Campus</strong><span>Bugema University Vocational SChool, Luwero District<br>33 km along Gayaza-Zirobwe Road</span></p>
+            <p><strong>Phone</strong><span>+256778905583/ +256753969357</span></p>
+        <p><strong>Email</strong><a href="mailto:bugemaunivocationsch@gmail.com">Bugemaunivocationalsch@gmail.com</a></p>
+      </address>
+      <p class="footer-hours">Mon-Fri: 8am-5pm </p>
+    </div>
   </div>
-  <div class="links">
-    <ul class="nav-links">
-   <li><a class="active " href="index.html">Home</a></li>
-    <li><a href="aboutus.html">About</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-    <li><a href="event.html">Events</a></li>
-    <li><a href="courses.html">Courses</a></li>
-      <li><a href="guild.html">Guild Council</a></li>
-  
-    </ul>
+  <div class="footer-bottom">
+    <p>&copy; Bugema University Vocational School</p>
+    <a href="index.html">Back to home</a>
   </div>
- <div class="location">
-   <div class="info-item"><div><b>Location</b><br>Bugema University, Luwero District<br>32km along Gayaza-Zirobwe Road</div></div>
-      <div class="info-item"><div><b>Phone</b><br>0700 000 000 / 0775 000 000<br>Mon-Sat 8am-5pm</div></div>
-      <div class="info-item"><div><b>Email</b><br>vocational@bugemauniv.ac.ug</div></>
-      <div class="info-item"><div><b>Office Hours</b><br>Mon-Fri: 8am-5pm<br>Sat: 9am-1pm</div></div>
- </div>
 </footer>
     <script>
             function openM(name, role, bio, img) {
