@@ -3,7 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us - Bugema University Vocational School</title>
+        <title>Contact Bugema University Vocational School | Admissions & Location</title>
+        <meta name="description" content="Contact Bugema University Vocational School in Uganda for admissions, course information, school visits, and practical vocational training support.">
+        <meta name="keywords" content="contact vocational school Uganda, Bugema University Luwero contact, vocational training school Uganda, admissions office Uganda">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Contact Bugema University Vocational School">
+        <meta property="og:description" content="Get in touch with Bugema University Vocational School for admissions, campus visits, and support.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="images/logo2.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="canonical" href="contact.html">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -28,10 +37,33 @@
 
   </div>
     <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
-    <li><a href="about.html"  class="ham-link"><span>📖</span>About</a></li>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About Us ▼</a>
+        <div class="dropdown">
+        <a href="about.html">Who We Are</a>
+         <a href="about.html#mission">Mission & Vision</a>
+        <a href="faq.html">FAQs</a>
+        </div>
+    </li>
     <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
     <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
-    <li><a href="courses.html" class="ham-link"><span>📚</span>Courses</a></li>
+    <li><a href="courses.html" class="ham-link"><span>👥</span>Courses ▼</a>
+             <div class="dropdown">
+                    <a href="courses.html">All Courses</a>
+                    <a href="#">Fashion & Tailoring</a>
+                    <a href="#">Electrical</a>
+                    <a href="#">Carpentry</a>
+                    <a href="#">Welding</a>
+                    <a href="#">Computer</a>
+                </div>
+    </li>
+    <li><a href="admission.html" class="ham-link"><span>📚</span>Admission ▼</a>
+       <div class="dropdown">
+        <a href="#how">How to Apply</a>
+        <a href="#req">Requirements</a>
+        <a href="#fees">Fees Structure</a>
+        <a href="#apply">Apply Online</a>
+        </div>
+    </li>
     <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
       <div class="btn">
       <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
@@ -53,29 +85,31 @@
                 <!-- LEFT - SEND MESSAGE FORM -->
                 <div class="contact-card-form" style="background: linear-gradient(0deg, rgba(245, 245, 252, 0.5), rgba(21, 21, 22, 0.8)), url(/images/automotive2.jpg); background-position: center;background-size: cover;">
                     <h3>Send Message</h3>
-      
+                <form id="form" action="https://api.web3forms.com/submit" method="POST">
                     <div class="field">
-                        <label>Your Name *</label>
-                        <input type="text" id="name" placeholder="Enter your full name">
+                        <label for="name">Your Name </label>
+                          <input id="name" type="text" name="name"  placeholder="Enter your full name" required >
                     </div>
 
                     <div class="field">
-                        <label>Phone / WhatsApp *</label>
-                        <input type="tel" id="phone" placeholder="+256 7XX XXX XXX">
+                        <label for="telephone">Phone / WhatsApp </label>
+                        <input type="tel" id="phone"  name="name"  placeholder="+256 7XX XXX XXX">
                     </div>
 
                     <div class="field">
-                        <label>Email *</label>
-                        <input type="email" id="email" placeholder="yourname@example.com">
+                        <label for="email">Email </label>
+                        <input id="email" type="email" name="email" placeholder="you@example.com"  required>
                     </div>
 
                     <div class="field">
-                        <label>Message *</label>
-                        <textarea id="message" rows="3" placeholder="I would like to inquire about the electrical workshop program..."></textarea>
+                        <label for="message">Message </label>
+                        <textarea id="message" name="message" placeholder="How can we help?" rows="3" required></textarea>
                     </div>
 
-                    <button class="contact-btn-send" onclick="sendMessage()">Send Message</button>
+                    <button type="submit" class="contact-btn-send" >Send Message</button>
                     <a href="#" id="whatsFormLink" class="contact-btn-whats-form">💬 Chat on WhatsApp</a>
+                </form>
+
                 </div>
 
                 <!-- RIGHT - INFO BOXES -->
@@ -96,22 +130,30 @@
                         <div><b>Email</b><span>admissions@bugemauniv.ac.ug</span><small>support@bugemauniv.ac.ug</small></div>
                     </div>
 
-                    <div class="contact-info-box map-box">
+                        <div class="contact-info-box map-box">
                         <div class="map-top">📍 Find Us on Map</div>
-                        <div class="map-img" onclick="openGoogleMap()" style="cursor:pointer">
-                            <!-- MINI MAP PREVIEW - CLICK OPENS REAL MAP -->
-                            <div style="color:#64748b;font-size:12px;text-align:center">
-                                <div class="map-pin">📍</div>
-                                <div style="width:90px;height:50px;background:#334155;clip-path:polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%, 0% 20%);margin:4px auto"></div>
-                            </div>
-                            <small>Bugema University Campus</small>
-                            <a href="#" onclick="openGoogleMap()" class="view-maps">View on Google Maps</a>
-                        </div>
+                       
+                        <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0!2d32.64!3d0.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzQnMDAiTiAzMsKwMzgnMDAiRQ!5e0!3m2!1sen!2sug!4v1700000000000!5m2!1sen!2sug"
+                        width="100%" 
+                        height="150" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
 
                     <div class="action-row">
-                        <a href="tel:+256700123456" class="btn-call">✉️ Call Now</a>
-                        <a href="#" id="whatsCallLink" class="btn-whats">💬 WhatsApp</a>
+                    <a href="https://maps.app.goo.gl/wsuEAmwe4eB8NbcVA?g_st=aw" target="_blank"
+                    style="background:#0a4a7a; color:#fff; padding:10px 6px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:16px;">
+                    🚗 Get Directions
+                    </a>
+                    <a href="https://maps.app.goo.gl/wsuEAmwe4eB8NbcVA?g_st=aw" target="_blank"
+                    style="background:#fff; color:#0a4a7a; border:2px solid #0a4a7a; padding:8px 6px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:16px;">
+                    📍 Open in Google Maps
+                    </a>
+ 
                     </div>
 
                 </div>
@@ -125,7 +167,7 @@
                 <span>Bugema University<strong>Vocational School</strong></span>
             </a>
             <p>Hands-on training for meaningful work, entrepreneurship, and service.</p>
-            <a class="footer-website" href="https://www.bugemavocational.com" target="_blank" rel="noopener noreferrer">www.bugemavocational.com</a>
+    
             <div class="footer-socials" aria-label="Social media searches">
                 <a href="https://www.facebook.com/search/top?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Facebook"><span class="social-facebook" aria-hidden="true">f</span></a>
                 <a href="https://www.tiktok.com/search?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on TikTok"><span class="social-tiktok" aria-hidden="true">♪</span></a>
@@ -174,7 +216,7 @@
 
                 // Validation - comment: check required fields
                 if (!name || !phone || !email || !msg) {
-                    alert("Please fill all fields marked with *");
+                    alert("Please fill all fields");
                     return;
                 }
                 if (!email.includes("@")) {
@@ -236,6 +278,6 @@
                 document.getElementById("phone").focus();
             };
         </script>
-
+    <script src="js/script.js"></script>
     </body>
 </html>

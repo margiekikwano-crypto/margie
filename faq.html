@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Bugema University Vocational School</title>
+    <meta name="description" content="Find answers to common questions about admissions, courses, fees, and student life at Bugema University Vocational School in Uganda.">
+    <meta name="keywords" content="vocational school FAQs Uganda, Bugema admissions FAQ, technical school questions Uganda, vocational school help Uganda">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="FAQs | Bugema University Vocational School">
+    <meta property="og:description" content="Helpful answers about vocational courses, enrollment, and study life at Bugema University Vocational School.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo2.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="faq.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f8f9ff;
+            color: #1a1a2e;
+        }
+
+        /* Premium Header */
+        .hero {
+            background: linear-gradient(180deg,#111111 0%,#000000 100%) !important;
+            /* padding: 100px 20% 100px 5%; */
+            padding: 70px 20px 120px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin: 0;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-top: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Floating Search Card */
+        .search-card {
+            max-width: 800px;
+            margin: -60px auto 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(10, 61, 157, 0.15);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-card input {
+            flex: 1;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1.5px solid #e5e8f0;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-card input:focus {
+            border-color: #0A3D9D;
+            box-shadow: 0 0 0 4px rgba(10, 61, 157, 0.1);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat b {
+            font-size: 28px;
+            color: #0A3D9D;
+            display: block;
+        }
+
+        .stat span {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Category Pills Premium */
+        .cats {
+            display: flex;
+            gap: 10px;
+            overflow: auto;
+            padding: 15px 5px;
+            scrollbar-width: none;
+        }
+
+        .cats button {
+            padding: 12px 22px;
+            border-radius: 30px;
+            border: none;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .cats button.active {
+            background: #0A3D9D;
+            color: white;
+            box-shadow: 0 8px 20px rgba(10, 61, 157, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Premium FAQ Card */
+        .faq {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f2f8;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .faq:hover {
+            box-shadow: 0 10px 30px rgba(10, 61, 157, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .faq-q {
+            padding: 20px 22px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .faq-q .left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .plus {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #f5f7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.4s ease;
+            padding: 0 22px;
+        }
+
+        .faq-a.show {
+            max-height: 500px;
+            padding: 0 22px 22px 22px;
+            border-top: 1px solid #f5f7ff;
+            margin-top: 10px;
+            padding-top: 15px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .faq.active .plus {
+            background: #0A3D9D;
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        /* Trust Banner */
+        .trust {
+            margin-top: 40px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+
+        .trust div b {
+            display: block;
+            margin-top: 10px;
+            color: #0A3D9D;
+        }
+
+        @media(max-width:768px) {
+            .trust {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .search-card {
+                margin: -40px 15px 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--navigation bar-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+   <img  src="images\logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+    <h1>Bugema University Vocational School</h1>
+
+  </div>
+       <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="#"  class="ham-link"><span>📖</span>About Us ▼</a>
+        <div class="dropdown">
+        <a href="about.html">Who We Are</a>
+         <a href="about.html#mission">Mission & Vision</a>
+        <a href="faq.html">FAQs</a>
+        </div>
+    </li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>👥</span>Courses ▼</a>
+             <div class="dropdown">
+                    <a href="courses.html">All Courses</a>
+                    <a href="#">Fashion & Tailoring</a>
+                    <a href="#">Electrical</a>
+                    <a href="#">Carpentry</a>
+                    <a href="#">Welding</a>
+                    <a href="#">Computer</a>
+                </div>
+    </li>
+    <li><a href="admission.html" class="ham-link"><span>📚</span>Admission ▼</a>
+       <div class="dropdown">
+        <a href="#how">How to Apply</a>
+        <a href="#req">Requirements</a>
+        <a href="#fees">Fees Structure</a>
+        <a href="#apply">Apply Online</a>
+        </div>
+    </li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+    <div class="hero">
+        <h1>How can we help you?</h1>
+        <p>Trusted answers for 2,000+ parents & students</p>
+    </div>
+
+    <div class="search-card">
+        <span style="font-size:22px">🔍</span>
+        <input type="text" id="search" placeholder="Search fees, hostel, admission, jobs...">
+    </div>
+
+    <div class="stats">
+        <div class="stat"><b>2k+</b><span>Students</span></div>
+        <div class="stat"><b>8</b><span>Courses</span></div>
+        <div class="stat"><b>98%</b><span>Job Rate</span></div>
+        <div class="stat"><b>24/7</b><span>Support</span></div>
+    </div>
+
+    <div class="container">
+        <div class="cats">
+            <button class="active" onclick="filterF('all',this)">✨ All Questions</button>
+            <button onclick="filterF('admission',this)">🎓 Admission</button>
+            <button onclick="filterF('fees',this)">💰 Fees</button>
+            <button onclick="filterF('courses',this)">🔧 Courses</button>
+            <button onclick="filterF('hostel',this)">🏠 Hostel & Safety</button>
+            <button onclick="filterF('jobs',this)">💼 Jobs & Certificate</button>
+        </div>
+
+        <!-- Example Premium FAQ -->
+        <div class="faq" data-cat="fees">
+            <div class="faq-q" onclick="openF(this)">
+                <div class="left">
+                    <div class="icon-box">💰</div> How much are the fees & can I pay in installments?
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-a">Fees is <b>UGX 600k - 800k per semester</b>. YES you can pay in installments: 50% to
+                start, rest later. No hidden charges. Hostel is separate UGX 400k. We give receipt for every payment.
+            </div>
+        </div>
+
+        <div class="faq" data-cat="admission">
+            <div class="faq-q" onclick="openF(this)">
+                <div class="left">
+                    <div class="icon-box">🎓</div> What do I need to join? Do you need high grades?
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-a">No high grades needed. We accept P7, S4, S6. Come with photocopy of results + National ID
+                + 2 passport photos. If you can read and write English, you qualify.</div>
+        </div>
+
+        <div class="faq" data-cat="admission">
+            <div class="faq-q" onclick="openF(this)">
+                <div class="left">
+                    <div class="icon-box">📅</div> When is next intake & how long is course?
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-a">Next intake: <b>January 2026</b>. 1 Year (Tailoring, Computer, Catering, Hair) and 2
+                Years (Electrical, Carpentry, Welding, Plumbing). Certificate on graduation day.</div>
+        </div>
+
+        <div class="faq" data-cat="hostel">
+            <div class="faq-q" onclick="openF(this)">
+                <div class="left">
+                    <div class="icon-box">🛡️</div> Is hostel safe for my daughter?
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-a">100% safe. Christian university, fenced, 24hr security, separate hostels for boys/girls,
+                Matron & Warden inside, curfew 9pm. Parents can visit anytime. This is why many parents choose us.</div>
+        </div>
+
+        <div class="faq" data-cat="courses">
+            <div class="faq-q" onclick="openF(this)">
+                <div class="left">
+                    <div class="icon-box">🔧</div> Do you give practical tools or just theory?
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-a">80% practical. We have: 40 sewing machines, electrical lab, carpentry workshop with
+                timber, welding machines, 50 computers, modern kitchen. You touch tools from week 1.</div>
+        </div>
+
+        <div class="faq" data-cat="jobs">
+            <div class="faq-q" onclick="openF(this)">
+                <div class="left">
+                    <div class="icon-box">📜</div> Which certificate will I get? Will I get job?
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-a">Bugema University Certificate + DIT Certificate (National). 8 out of 10 students start
+                earning within 6 months - either job or own business. We add entrepreneurship + we link you to
+                companies.</div>
+        </div>
+
+        <div class="trust">
+            <div>✅<b>80% Practical Training</b><span>Not theory</span></div>
+            <div>✅<b>DIT & University Certificate</b><span>National recognized</span></div>
+            <div>✅<b>Hostel & Security Inside</b><span>Safe for all</span></div>
+        </div>
+
+    </div>
+    
+<footer class="site-footer">
+    <div class="footer-main">
+        <div class="footer-brand">
+            <a class="footer-brand-link" href="index.html">
+                <span>Bugema University<strong>Vocational School</strong></span>
+            </a>
+            <p>Hands-on training for meaningful work, entrepreneurship, and service.</p>
+    
+            <div class="footer-socials" aria-label="Social media searches">
+                <a href="https://www.facebook.com/search/top?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Facebook"><span class="social-facebook" aria-hidden="true">f</span></a>
+                <a href="https://www.tiktok.com/search?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on TikTok"><span class="social-tiktok" aria-hidden="true">♪</span></a>
+                <a href="https://www.google.com/search?q=Bugema+University+Vocational+School" target="_blank" rel="noopener noreferrer" aria-label="Search Google for Bugema University Vocational School"><span class="social-google" aria-hidden="true">G</span></a>
+                <a href="https://www.instagram.com/explore/search/keyword/?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r=".8" class="instagram-dot"/></svg></a>
+            </div>
+        </div>
+        <nav class="footer-column" aria-label="Footer navigation">
+            <h2>Explore</h2>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="guild.html">Guild Council</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="footer-column footer-contact">
+            <h2>Visit &amp; Contact</h2>
+            <address>
+                <p><strong>Campus</strong><span>Bugema University, Luwero District<br>32 km along Gayaza-Zirobwe Road</span></p>
+                <p><strong>Phone</strong><span>0700 000 000 / 0775 000 000</span></p>
+                <p><strong>Email</strong><a href="mailto:vocational@bugemauniv.ac.ug">vocational@bugemauniv.ac.ug</a></p>
+            </address>
+            <p class="footer-hours">Mon-Fri: 8am-5pm · Sat: 9am-1pm</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; Bugema University Vocational School</p>
+        <a href="index.html">Back to home</a>
+    </div>
+</footer>
+<!-- PREMIUM WhatsApp with Greeting Popup -->
+<div id="wa-wrapper">
+  <!-- Greeting Popup -->
+  <div id="wa-popup">
+    <div class="wa-header">
+      <img src="https://bugemauniv.ac.ug/wp-content/uploads/2020/10/bugema-logo.png" alt="logo" onerror="this.style.display='none'">
+      <div>
+        <b>Bugema Vocational</b>
+        <span>Typically replies in 5 mins</span>
+      </div>
+      <div class="wa-close" onclick="closeWAPopup()">✕</div>
+    </div>
+    <div class="wa-body">
+      <div class="wa-msg">
+        Hello! 👋 <br>
+        Welcome to Bugema Vocational Institute.<br><br>
+        How can we help you today? <br>
+        <small>• Courses & Fees? • Admission? • Hostel?</small>
+      </div>
+      <div class="wa-time">Online now • Green • Fast reply</div>
+      <a id="wa-go-btn" href="https://wa.me/256772000000?text=Hello%20Bugema%20Vocational%2C%20I%20need%20info%20about%20your%20courses.%20My%20name%20is%20" target="_blank">
+        💬 Continue to WhatsApp
+      </a>
+      <p class="wa-note">Clicking will open WhatsApp app with greeting message ready</p>
+    </div>
+  </div>
+
+  <!-- Floating Button -->
+  <div id="wa-btn" onclick="toggleWAPopup()">
+    <span class="wa-icon">💬</span>
+    <span class="wa-notif">1</span>
+  </div>
+</div>
+
+    <script>
+        function openF(el) {
+            let box = el.parentElement;
+            let ans = box.querySelector('.faq-a');
+            document.querySelectorAll('.faq-a').forEach(a => { if (a !== ans) a.classList.remove('show') });
+            document.querySelectorAll('.faq').forEach(f => { if (f !== box) f.classList.remove('active') });
+            ans.classList.toggle('show');
+            box.classList.toggle('active');
+        }
+        function filterF(cat, btn) {
+            document.querySelectorAll('.cats button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.faq').forEach(f => {
+                f.style.display = (cat == 'all' || f.dataset.cat == cat) ? 'block' : 'none';
+            });
+        }
+        document.getElementById('search').addEventListener('input', function () {
+            let q = this.value.toLowerCase();
+            document.querySelectorAll('.faq').forEach(f => {
+                f.style.display = f.innerText.toLowerCase().includes(q) ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

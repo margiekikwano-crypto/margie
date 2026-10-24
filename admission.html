@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions Open | Bugema University Vocational School Uganda</title>
+    <meta name="description" content="Apply to Bugema University Vocational School in Uganda. Explore admissions requirements, fees, deadlines, and how to enroll in practical vocational courses.">
+    <meta name="keywords" content="vocational school admissions Uganda, apply to vocational school Uganda, technical school admission Luwero, BUGEMA vocational enrollment">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Admissions Open at Bugema University Vocational School">
+    <meta property="og:description" content="Join a vocational school in Uganda focused on practical training, confidence, and career growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo2.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="admission.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        .hero {
+            background:radial-gradient(600px at 50% -10%,rgba(212,160,23,0.25), transparent), linear-gradient(180deg,#111111 0%,#000000 100%) !important;
+            padding: 100px 20% 100px 5%;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.08);
+              background:radial-gradient(circle at center , rgba(212,160,23,0.18) 0%,rgba(212,160,23,0.8) 30%,rgba(212,160,23,0.2) 60%, transparent 70%);
+            border-radius: 50%;
+            top: -150px;
+            right: -100px;
+            filter: blur(40px);
+        }
+
+        .hero h1 {
+           margin-top: 100px;
+           text-align: center;
+            font-size: 44px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+            opacity: 0.95;
+            position: relative;
+        }
+
+        .hero-badge {
+            margin-top: 20px;
+            display: inline-block;
+            border: 1px solid rgba(212, 160, 23, 0.3);
+             border-left: 3px solid #D4A017;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .info-card {
+            max-width: 1100px;
+             background: #f7f7f9 !important;
+            border-left: 3px solid #D4A017;
+            margin: -60px auto 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .info-card div {
+            text-align: center;
+            border-right: 3px solid black;
+        }
+
+        .info-card div:last-child {
+            border: none;
+        }
+
+        .info-card b {
+            color: #7a5a00;
+            font-size: 20px;
+            display: block;
+        }
+
+        .info-card span {
+            font-size: 13px;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef1f7;
+        }
+
+        .section h2 {
+            color: gold;
+            font-size: 26px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h2 .num {
+            background: black;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .sub {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 1px dashed #d6ddf0;
+        }
+
+        .step .icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .req-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .req-box {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #eef1f7;
+        }
+
+        .fees-table th {
+            background: black;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .fees-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f2f8;
+        }
+
+        .tag {
+            background: #e8f0ff;
+            color: #0A3D9D;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-grid input,
+        .form-grid select,
+        .form-grid textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1.5px solid #e5e8f0;
+            outline: none;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .submit-btn {
+            background: black;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .note {
+            background: #fff8e6;
+            border: 1px solid #ffe8a3;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-top: 15px;
+            color: #7a5a00;
+        }
+
+        @media(max-width:768px) {
+            .info-card {
+                grid-template-columns: 1fr 1fr;
+                margin: -40px 15px 0 15px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .req-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .topbar {
+                font-size: 11px;
+            }
+        }
+
+        /* WhatsApp Greeting */
+        #wa-wrapper {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 99999;
+        }
+
+        #wa-btn {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            position: relative;
+            animation: pulseWA 2s infinite;
+        }
+
+        @keyframes pulseWA {
+            0% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.08)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        .wa-notif {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: red;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        #wa-popup {
+            width: 320px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            display: none;
+            margin-bottom: 15px;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        .wa-header {
+            background: #0A3D9D;
+            color: white;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            position: relative;
+        }
+
+        .wa-header b {
+            display: block;
+            font-size: 14px;
+        }
+
+        .wa-header span {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .wa-close {
+            position: absolute;
+            right: 12px;
+            top: 10px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .wa-body {
+            padding: 15px;
+            background: #e5ddd5 url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+        }
+
+        .wa-msg {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 0 12px 12px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .wa-time {
+            font-size: 11px;
+            color: #666;
+            margin-top: 8px;
+            margin-left: 5px;
+        }
+
+        #wa-go-btn {
+            display: block;
+            margin-top: 18px;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 13px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+<!--header-->
+<header>
+<nav class="navbar">
+   <div class="logo">
+<img  src="images/logo2.jpg" alt="logo">
+    <b style="color:yellow; line-height:1.1;">BUGEMA UNIVERSITY<br>VOCATIONAL SCHOOL</b>
+  </div>
+  <!--Hambeguer Menu icons-->
+  <div class="hambeguer-wrap" id="hambeguerWrap" onclick="toggleNav()">
+  <div class="hambeguer">
+    <span></span><span></span><span></span>
+  </div>
+  </div>
+
+  <ul class="links hamdrawer" id="drawer">
+      <div class="h1header">
+    <h1>Bugema University Vocational School</h1>
+
+  </div>
+    <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
+    <li><a href="#"  class="ham-link"><span>📖</span>About Us ▼</a>
+        <div class="dropdown">
+        <a href="about.html">Who We Are</a>
+         <a href="about.html#mission">Mission & Vision</a>
+        <a href="faq.html">FAQs</a>
+        </div>
+    </li>
+    <li><a href="contact.html" class="ham-link"><span>📞</span>Contact Us</a></li>
+    <li><a href="event.html"  class="ham-link"><span>📆</span>Events</a></li>
+    <li><a href="courses.html" class="ham-link"><span>👥</span>Courses ▼</a>
+             <div class="dropdown">
+                    <a href="courses.html">All Courses</a>
+                    <a href="#">Fashion & Tailoring</a>
+                    <a href="#">Electrical</a>
+                    <a href="#">Carpentry</a>
+                    <a href="#">Welding</a>
+                    <a href="#">Computer</a>
+                </div>
+    </li>
+    <li><a href="#" class="ham-link"><span>📚</span>Admission ▼</a>
+       <div class="dropdown">
+        <a href="#how">How to Apply</a>
+        <a href="#req">Requirements</a>
+        <a href="#fees">Fees Structure</a>
+        <a href="#apply">Apply Online</a>
+        </div>
+    </li>
+    <li><a href="guild.html" class="ham-link"><span>👥</span>Guild Council</a></li>
+      <div class="btn">
+      <button><a  href="enroll.html" target="_blank" class="ham-button"><span>📝</span>Enroll Now</a></button>
+  </div>
+  </ul>
+</nav>
+<!--Overlay for navBar-->
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+</header>
+
+    <div class="hero">
+        <h1>Admissions Open - January 2026</h1>
+        <p>Join 2,000+ students gaining hands-on skills for self-employment</p>
+        <div class="hero-badge">⚡ No Interview • No High Grades • Hostel Available</div>
+    </div>
+
+    <div class="info-card">
+        <div><b>2 Intakes</b><span>Jan & June</span></div>
+        <div><b>UGX 20k</b><span>Application</span></div>
+        <div><b>1-2 Years</b><span>Certificate</span></div>
+        <div><b>80% Practical</b><span>Workshop</span></div>
+    </div>
+
+    <div class="container">
+        <div class="section" id="how">
+            <h2><span class="num">1</span> How to Apply - 3 Steps</h2>
+            <p class="sub">Apply in 10 minutes</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="icon">📝</div>
+                    <h4>Fill Form</h4>
+                    <p style="font-size:13px; color:#666;">Online below or campus - 5 mins</p>
+                </div>
+                <div class="step">
+                    <div class="icon">💳</div>
+                    <h4>Pay 20k</h4>
+                    <p style="font-size:13px; color:#666;">MTN/Airtel Money or Accounts</p>
+                </div>
+                <div class="step">
+                    <div class="icon">✅</div>
+                    <h4>Report</h4>
+                    <p style="font-size:13px; color:#666;">ID + Results - Letter same day</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="req">
+            <h2><span class="num">2</span> Entry Requirements</h2>
+            <div class="req-grid">
+                <div class="req-box">🎓<div><b>P.7, S.4, S.6 Welcome</b><br><small>Can read & write = you
+                            qualify</small></div>
+                </div>
+                <div class="req-box">📄<div><b>Documents</b><br><small>Results copy, National ID, 2 photos</small></div>
+                </div>
+                <div class="req-box">👕<div><b>Uniform Once</b><br><small>UGX 50k - Tools we provide</small></div>
+                </div>
+                <div class="req-box">🏠<div><b>Hostel Safe</b><br><small>Separate boys/girls, matron, security</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="fees">
+            <h2><span class="num">3</span> Fees Structure 2026</h2>
+            <table class="fees-table">
+                <tr>
+                    <th>Course</th>
+                    <th>Duration</th>
+                    <th>Per Semester</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><b>Tailoring</b></td>
+                    <td>1 Year</td>
+                    <td>UGX 600,000</td>
+                    <td><span class="tag">POPULAR</span></td>
+                </tr>
+                <tr>
+                    <td><b>Electrical</b></td>
+                    <td>2 Years</td>
+                    <td>UGX 800,000</td>
+                    <td><span class="tag">HIGH DEMAND</span></td>
+                </tr>
+                <tr>
+                    <td><b>Carpentry</b></td>
+                    <td>2 Years</td>
+                    <td>UGX 800,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>Welding</b></td>
+                    <td>2 Years</td>
+                    <td>UGX 800,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>Computer</b></td>
+                    <td>1 Year</td>
+                    <td>UGX 700,000</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="note">💡 <b>Installments:</b> 50% first week, balance in 2 months. Hostel 400k/sem. No student
+                chased if on plan.</div>
+        </div>
+
+        <div class="section" id="apply">
+            <h2><span class="num">4</span> Apply Online</h2>
+            <p class="sub">We reply in 2 hours on WhatsApp</p>
+            <form onsubmit="applyNow(event)">
+                <div class="form-grid">
+                    <input type="text" placeholder="Full Name *" required>
+                    <input type="tel" placeholder="Phone / WhatsApp *" required>
+                    <select required>
+                        <option value="">Choose Course *</option>
+                        <option>Tailoring</option>
+                        <option>Electrical</option>
+                        <option>Carpentry</option>
+                        <option>Welding</option>
+                        <option>Computer</option>
+                    </select>
+                    <select required>
+                        <option value="">Education *</option>
+                        <option>P.7</option>
+                        <option>S.4</option>
+                        <option>S.6</option>
+                    </select>
+                    <select class="full">
+                        <option>Need Hostel? Yes/No</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                    <textarea class="full" rows="3" placeholder="Question?"></textarea>
+                </div>
+                <button class="submit-btn">Submit → Open WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WHATSAPP GREETING POPUP -->
+    <div id="wa-wrapper">
+        <div id="wa-popup">
+            <div class="wa-header">
+                <div
+                    style="width:38px; height:38px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                    🎓</div>
+                <div><b>Bugema Vocational</b><span>Online now - replies in 5 mins</span></div>
+                <div class="wa-close" onclick="closeWAPopup()">✕</div>
+            </div>
+            <div class="wa-body">
+                <div class="wa-msg" id="wa-greet-msg">
+                    Good morning! ☀️<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>•
+                        Fees? • Admission? • Hostel?</small>
+                </div>
+                <div class="wa-time">✓✓ Online • Fast reply</div>
+                <a id="wa-go-btn"
+                    href="https://wa.me/256772000000?text=Hello%20Bugema%20Vocational%2C%20I%20need%20info%20about%20admission.%20My%20name%20is%20"
+                    target="_blank">💬 Continue to WhatsApp</a>
+                <p style="font-size:10px; color:#666; text-align:center; margin-top:10px;">Opens WhatsApp with greeting
+                    ready</p>
+            </div>
+        </div>
+        <div id="wa-btn" onclick="toggleWAPopup()"><span style="font-size:28px">💬</span><span class="wa-notif">1</span>
+        </div>
+    </div>
+
+
+<footer class="site-footer">
+    <div class="footer-main">
+        <div class="footer-brand">
+            <a class="footer-brand-link" href="index.html">
+                <span>Bugema University<strong>Vocational School</strong></span>
+            </a>
+            <p>Hands-on training for meaningful work, entrepreneurship, and service.</p>
+    
+            <div class="footer-socials" aria-label="Social media searches">
+                <a href="https://www.facebook.com/search/top?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Facebook"><span class="social-facebook" aria-hidden="true">f</span></a>
+                <a href="https://www.tiktok.com/search?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on TikTok"><span class="social-tiktok" aria-hidden="true">♪</span></a>
+                <a href="https://www.google.com/search?q=Bugema+University+Vocational+School" target="_blank" rel="noopener noreferrer" aria-label="Search Google for Bugema University Vocational School"><span class="social-google" aria-hidden="true">G</span></a>
+                <a href="https://www.instagram.com/explore/search/keyword/?q=Bugema%20University%20Vocational%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Bugema University Vocational School on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r=".8" class="instagram-dot"/></svg></a>
+            </div>
+        </div>
+        <nav class="footer-column" aria-label="Footer navigation">
+            <h2>Explore</h2>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="guild.html">Guild Council</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="footer-column footer-contact">
+            <h2>Visit &amp; Contact</h2>
+            <address>
+                <p><strong>Campus</strong><span>Bugema University, Luwero District<br>32 km along Gayaza-Zirobwe Road</span></p>
+                <p><strong>Phone</strong><span>0700 000 000 / 0775 000 000</span></p>
+                <p><strong>Email</strong><a href="mailto:vocational@bugemauniv.ac.ug">vocational@bugemauniv.ac.ug</a></p>
+            </address>
+            <p class="footer-hours">Mon-Fri: 8am-5pm · Sat: 9am-1pm</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; Bugema University Vocational School</p>
+        <a href="index.html">Back to home</a>
+    </div>
+</footer>
+    <script>
+        function applyNow(e) {
+            e.preventDefault();
+            let d = e.target.querySelectorAll('input, select, textarea');
+            let msg = `Hello Bugema Vocational, I want to apply.%0AName: ${d[0].value}%0APhone: ${d[1].value}%0ACourse: ${d[2].value}%0AEdu: ${d[3].value}%0AHostel: ${d[4].value}%0AQ: ${d[5].value}`;
+            window.open(`https://wa.me/256772000000?text=${msg}`, '_blank');
+        }
+        let waOpen = false;
+        function toggleWAPopup() { let p = document.getElementById('wa-popup'); p.style.display = waOpen ? 'none' : 'block'; waOpen = !waOpen; }
+        function closeWAPopup() { document.getElementById('wa-popup').style.display = 'none'; waOpen = false; }
+        setTimeout(() => { if (!localStorage.getItem('waShown')) { document.getElementById('wa-popup').style.display = 'block'; waOpen = true; localStorage.setItem('waShown', 'yes'); } }, 8000);
+        let hr = new Date().getHours(); let gr = hr < 12 ? "Good morning! ☀️" : hr < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
+        document.getElementById('wa-greet-msg').innerHTML = gr + "<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>• Fees? • Admission? • Hostel?</small>";
+    </script>
+
+</body>
+
+</html>

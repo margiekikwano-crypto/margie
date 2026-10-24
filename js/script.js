@@ -153,3 +153,64 @@ function closeVideo(){
 
 
 
+// contact form submission
+const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    formData.append("access_key", "6c0a5071-58c6-49aa-851c-7055bd1c2f31");
+
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+// watsup float
+ let waOpen = false;
+    function toggleWAPopup() {
+      let popup = document.getElementById('wa-popup');
+      if (waOpen) { popup.style.display = 'none'; waOpen = false; }
+      else { popup.style.display = 'block'; waOpen = true; }
+    }
+    function closeWAPopup() {
+      document.getElementById('wa-popup').style.display = 'none';
+      waOpen = false;
+    }
+    // Auto-open greeting after 8 seconds on first visit
+    setTimeout(() => {
+      if (!localStorage.getItem('waShown')) {
+        document.getElementById('wa-popup').style.display = 'block';
+        waOpen = true;
+        localStorage.setItem('waShown', 'yes');
+      }
+    }, 8000);
+
+    // Optional: Personalize greeting with time
+    let hour = new Date().getHours();
+    let greet = hour < 12 ? "Good morning! ☀️" : hour < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
+    document.querySelector('.wa-msg').innerHTML = greet + "<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>• Courses & Fees? • Admission? • Hostel?</small>";
