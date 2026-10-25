@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>School Events & Open Days | Bugema University Vocational School</title>
         <meta name="description" content="Stay updated on events, open days, and student activities at Bugema University Vocational School in Uganda.">
-        <meta name="keywords" content="vocational school events Uganda, Bugema open day, school activities Uganda, career events vocational Uganda">
         <meta name="robots" content="index, follow">
         <meta property="og:title" content="School Events and Open Days at Bugema University Vocational School">
         <meta property="og:description" content="Discover open days, workshops, and community events at Bugema University Vocational School.">
@@ -16,16 +15,17 @@
         <link rel="canonical" href="https://bugemaunivoc.netlify.app/event.html">
         <link rel="stylesheet" href="css/style.css">
         <style>
-                     .event-hero {
+                  .event-hero {
                 background: linear-gradient(0deg, rgba(26, 35, 126, 0.10), rgba(26, 35, 126, 0.8)),
                     url("images/sports.jpg");
-                background-size: 100% 100%, contain;
+                background-size: 100% 100%, cover;
                 background-position: center, center;
                 background-repeat: no-repeat;
                 background-color: #0a1931;
                   padding:150px 10% 150px;
                 text-align: center;
                 color: white;
+               
            
                 
             }
@@ -153,7 +153,33 @@
 </div>
 
 </div>
-        
+      <!-- WHATSAPP GREETING POPUP -->
+    <div id="wa-wrapper">
+        <div id="wa-popup">
+            <div class="wa-header">
+                <div
+                    style="width:38px; height:38px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                    🎓</div>
+                <div><b>Bugema Vocational</b><span>Online now - replies in 5 mins</span></div>
+                <div class="wa-close" onclick="closeWAPopup()">✕</div>
+            </div>
+            <div class="wa-body">
+                <div class="wa-msg" id="wa-greet-msg">
+                    Hello! ☀️<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>•
+                        Fees? • Admission? • Hostel?</small>
+                </div>
+                <div class="wa-time">✓✓ Online • Fast reply</div>
+                <a id="wa-go-btn"
+                    href="https://wa.me/256772000000?text=Hello%20Bugema%20Vocational%2C%20I%20need%20info%20about%20admission.%20My%20name%20is%20"
+                    target="_blank">💬 Continue to WhatsApp</a>
+                <p style="font-size:10px; color:#666; text-align:center; margin-top:10px;">Opens WhatsApp with greeting
+                    ready</p>
+            </div>
+        </div>
+        <div id="wa-btn" onclick="toggleWAPopup()"><span style="font-size:28px">💬</span><span class="wa-notif">1</span>
+        </div>
+    </div>
+   
 <footer class="site-footer">
   <div class="footer-main">
     <div class="footer-brand">
@@ -195,6 +221,20 @@
     <a href="index.html">Back to home</a>
   </div>
 </footer>
+    <script>
+        function applyNow(e) {
+            e.preventDefault();
+            let d = e.target.querySelectorAll('input, select, textarea');
+            let msg = `Hello Bugema Vocational, I want to apply.%0AName: ${d[0].value}%0APhone: ${d[1].value}%0ACourse: ${d[2].value}%0AEdu: ${d[3].value}%0AHostel: ${d[4].value}%0AQ: ${d[5].value}`;
+            window.open(`https://wa.me/256772000000?text=${msg}`, '_blank');
+        }
+        let waOpen = false;
+        function toggleWAPopup() { let p = document.getElementById('wa-popup'); p.style.display = waOpen ? 'none' : 'block'; waOpen = !waOpen; }
+        function closeWAPopup() { document.getElementById('wa-popup').style.display = 'none'; waOpen = false; }
+        setTimeout(() => { if (!localStorage.getItem('waShown')) { document.getElementById('wa-popup').style.display = 'block'; waOpen = true; localStorage.setItem('waShown', 'yes'); } }, 8000);
+        let hr = new Date().getHours(); let gr = hr < 12 ? "Hello! ☀️" : hr < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
+        document.getElementById('wa-greet-msg').innerHTML = gr + "<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>• Fees? • Admission? • Hostel?</small>";
+    </script>
 <script src="js/script.js"></script>
     </body>
 </html>

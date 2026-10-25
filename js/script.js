@@ -190,27 +190,3 @@ form.addEventListener('submit', async (e) => {
         submitBtn.disabled = false;
     }
 });
-// watsup float
- let waOpen = false;
-    function toggleWAPopup() {
-      let popup = document.getElementById('wa-popup');
-      if (waOpen) { popup.style.display = 'none'; waOpen = false; }
-      else { popup.style.display = 'block'; waOpen = true; }
-    }
-    function closeWAPopup() {
-      document.getElementById('wa-popup').style.display = 'none';
-      waOpen = false;
-    }
-    // Auto-open greeting after 8 seconds on first visit
-    setTimeout(() => {
-      if (!localStorage.getItem('waShown')) {
-        document.getElementById('wa-popup').style.display = 'block';
-        waOpen = true;
-        localStorage.setItem('waShown', 'yes');
-      }
-    }, 8000);
-
-    // Optional: Personalize greeting with time
-    let hour = new Date().getHours();
-    let greet = hour < 12 ? "Good morning! ☀️" : hour < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
-    document.querySelector('.wa-msg').innerHTML = greet + "<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>• Courses & Fees? • Admission? • Hostel?</small>";

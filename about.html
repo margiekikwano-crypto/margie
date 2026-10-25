@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Bugema University Vocational School | Vocational Education in Uganda</title>
     <meta name="description" content="Learn about Bugema University Vocational School, a vocational training institution in Uganda focused on employment, entrepreneurship, and practical skills development.">
-    <meta name="keywords" content="about Bugema vocational school, vocational education Uganda, skills training Luwero, technical school Uganda, vocational school mission Uganda">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="About Bugema University Vocational School">
     <meta property="og:description" content="A practical vocational school in Uganda that equips students with job-ready skills and leadership values.">
@@ -55,7 +54,7 @@
                     <a href="#">Computer</a>
                 </div>
     </li>
-    <li><a href="#" class="ham-link"><span>👥 </span>Admission ▼</a>
+    <li><a href="admission.html" class="ham-link"><span>👥 </span>Admission ▼</a>
        <div class="dropdown">
         <a href="#how">How to Apply</a>
         <a href="#req">Requirements</a>
@@ -121,6 +120,33 @@
         <div class="test-card"><div class="leader-avatar"><img src=""></div><h4>Kibuye Ali</h4><p><b>Pursed a Certificate and Diploma in Driving currently working as a School driver at Buddo Secondary School</p></div>
       </div>
     </div>
+    <!-- WHATSAPP GREETING POPUP -->
+    <div id="wa-wrapper">
+        <div id="wa-popup">
+            <div class="wa-header">
+                <div
+                    style="width:38px; height:38px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                    🎓</div>
+                <div><b>Bugema Vocational</b><span>Online now - replies in 5 mins</span></div>
+                <div class="wa-close" onclick="closeWAPopup()">✕</div>
+            </div>
+            <div class="wa-body">
+                <div class="wa-msg" id="wa-greet-msg">
+                    Hello! ☀️<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>•
+                        Fees? • Admission? • Hostel?</small>
+                </div>
+                <div class="wa-time">✓✓ Online • Fast reply</div>
+                <a id="wa-go-btn"
+                    href="https://wa.me/256772000000?text=Hello%20Bugema%20Vocational%2C%20I%20need%20info%20about%20admission.%20My%20name%20is%20"
+                    target="_blank">💬 Continue to WhatsApp</a>
+                <p style="font-size:10px; color:#666; text-align:center; margin-top:10px;">Opens WhatsApp with greeting
+                    ready</p>
+            </div>
+        </div>
+        <div id="wa-btn" onclick="toggleWAPopup()"><span style="font-size:28px">💬</span><span class="wa-notif">1</span>
+        </div>
+    </div>
+
 <footer class="site-footer">
   <div class="footer-main">
     <div class="footer-brand">
@@ -161,6 +187,20 @@
     <a href="index.html">Back to home</a>
   </div>
 </footer>
+    <script>
+        function applyNow(e) {
+            e.preventDefault();
+            let d = e.target.querySelectorAll('input, select, textarea');
+            let msg = `Hello Bugema Vocational, I want to apply.%0AName: ${d[0].value}%0APhone: ${d[1].value}%0ACourse: ${d[2].value}%0AEdu: ${d[3].value}%0AHostel: ${d[4].value}%0AQ: ${d[5].value}`;
+            window.open(`https://wa.me/256772000000?text=${msg}`, '_blank');
+        }
+        let waOpen = false;
+        function toggleWAPopup() { let p = document.getElementById('wa-popup'); p.style.display = waOpen ? 'none' : 'block'; waOpen = !waOpen; }
+        function closeWAPopup() { document.getElementById('wa-popup').style.display = 'none'; waOpen = false; }
+        setTimeout(() => { if (!localStorage.getItem('waShown')) { document.getElementById('wa-popup').style.display = 'block'; waOpen = true; localStorage.setItem('waShown', 'yes'); } }, 8000);
+        let hr = new Date().getHours(); let gr = hr < 12 ? "Hello! ☀️" : hr < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
+        document.getElementById('wa-greet-msg').innerHTML = gr + "<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>• Fees? • Admission? • Hostel?</small>";
+    </script>
     <script  src="js/script.js"></script>
 </body>
 </html>

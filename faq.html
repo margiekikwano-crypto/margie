@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequently Asked Questions | Bugema University Vocational School</title>
     <meta name="description" content="Find answers to common questions about admissions, courses, fees, and student life at Bugema University Vocational School in Uganda.">
-    <meta name="keywords" content="vocational school FAQs Uganda, Bugema admissions FAQ, technical school questions Uganda, vocational school help Uganda">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="FAQs | Bugema University Vocational School">
     <meta property="og:description" content="Helpful answers about vocational courses, enrollment, and study life at Bugema University Vocational School.">
@@ -17,255 +16,151 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+     .faq-wrapper {
+      max-width: 900px;
+      margin: 50px auto;
+      padding:  20px;
+      font-family: 'Segoe UI', sans-serif
+    }
 
-        body {
-            margin: 0;
-            background: #f8f9ff;
-            color: #1a1a2e;
-        }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 40px
+    }
 
-        /* Premium Header */
-        .hero {
-            background: linear-gradient(180deg,#111111 0%,#000000 100%) !important;
-            /* padding: 100px 20% 100px 5%; */
-            padding: 70px 20px 120px 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+    .faq-header h1 {
+      font-size: 2.5rem;
+      color: #0f2c61;
+            margin-top: 90px;
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 50%;
-            top: -200px;
-            right: -100px;
-        }
+      margin-bottom: 10px
+    }
 
-        .hero h1 {
-            font-size: 42px;
-            margin: 0;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-        }
+    .faq-header p {
+      color: #666
+    }
 
-        .hero p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-top: 12px;
-            position: relative;
-            z-index: 2;
-        }
+    .faq-search {
+      position: relative;
+      margin-bottom: 30px
+    }
 
-        /* Floating Search Card */
-        .search-card {
-            max-width: 800px;
-            margin: -60px auto 0 auto;
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(10, 61, 157, 0.15);
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
+    .faq-search input {
+      width: 100%;
+      padding: 16px 20px 16px 50px;
+      border: 2px solid #e8eefc;
+      border-radius: 50px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s
+    }
 
-        .search-card input {
-            flex: 1;
-            padding: 16px 20px;
-            border-radius: 12px;
-            border: 1.5px solid #e5e8f0;
-            font-size: 16px;
-            outline: none;
-            transition: 0.3s;
-        }
+    .faq-search input:focus {
+      border-color: #0f2c61;
+      box-shadow: 0 0 0 4px rgba(15, 44, 97, 0.1)
+    }
 
-        .search-card input:focus {
-            border-color: #0A3D9D;
-            box-shadow: 0 0 0 4px rgba(10, 61, 157, 0.1);
-        }
+    .faq-search i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+      font-size: 18px
+    }
 
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
+    .faq-cats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px
+    }
 
-        .stat {
-            text-align: center;
-        }
+    .faq-cats button {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500
+    }
 
-        .stat b {
-            font-size: 28px;
-            color: #0A3D9D;
-            display: block;
-        }
+    .faq-cats button.active,
+    .faq-cats button:hover {
+      background: #0f2c61;
+      color: #fff;
+      border-color: #0f2c61
+    }
 
-        .stat span {
-            font-size: 13px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .faq-item {
+      border: 1px solid #eef2ff;
+      border-radius: 16px;
+      margin-bottom: 15px;
+      background: #fff;
+      overflow: hidden;
+      transition: 0.3s
+    }
 
-        .container {
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+    .faq-item:hover {
+      box-shadow: 0 10px 30px rgba(15, 44, 97, 0.08)
+    }
 
-        /* Category Pills Premium */
-        .cats {
-            display: flex;
-            gap: 10px;
-            overflow: auto;
-            padding: 15px 5px;
-            scrollbar-width: none;
-        }
+    .faq-q {
+      padding: 20px 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #1a1a1a;
+      font-size: 17px
+    }
 
-        .cats button {
-            padding: 12px 22px;
-            border-radius: 30px;
-            border: none;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            font-weight: 600;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
+    .faq-q span.icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f3f6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      flex-shrink: 0
+    }
 
-        .cats button.active {
-            background: #0A3D9D;
-            color: white;
-            box-shadow: 0 8px 20px rgba(10, 61, 157, 0.3);
-            transform: translateY(-2px);
-        }
+    .faq-item.active .faq-q span.icon {
+      background: #0f2c61;
+      color: #fff;
+      transform: rotate(45deg)
+    }
 
-        /* Premium FAQ Card */
-        .faq {
-            background: white;
-            border-radius: 16px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid #f0f2f8;
-            transition: 0.3s;
-            overflow: hidden;
-        }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 25px
+    }
 
-        .faq:hover {
-            box-shadow: 0 10px 30px rgba(10, 61, 157, 0.1);
-            transform: translateY(-2px);
-        }
+    .faq-item.active .faq-a {
+      max-height: 500px;
+      padding: 0 25px 20px 25px
+    }
 
-        .faq-q {
-            padding: 20px 22px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: #1a1a2e;
-        }
+    .faq-a p {
+      color: #555;
+      line-height: 1.7;
+      margin: 0
+    }
 
-        .faq-q .left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .icon-box {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: #eef2ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        .plus {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #f5f7ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-
-        .faq-a {
-            max-height: 0;
-            overflow: hidden;
-            transition: 0.4s ease;
-            padding: 0 22px;
-        }
-
-        .faq-a.show {
-            max-height: 500px;
-            padding: 0 22px 22px 22px;
-            border-top: 1px solid #f5f7ff;
-            margin-top: 10px;
-            padding-top: 15px;
-            line-height: 1.7;
-            color: #444;
-        }
-
-        .faq.active .plus {
-            background: #0A3D9D;
-            color: white;
-            transform: rotate(45deg);
-        }
-
-        /* Trust Banner */
-        .trust {
-            margin-top: 40px;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-            text-align: center;
-        }
-
-        .trust div b {
-            display: block;
-            margin-top: 10px;
-            color: #0A3D9D;
-        }
-
-        @media(max-width:768px) {
-            .trust {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .search-card {
-                margin: -40px 15px 0 15px;
-            }
-        }
-    </style>
+    .no-result {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+      display: none
+    }
+</style>
 </head>
 
 <body>
@@ -326,110 +221,88 @@
 <!--Overlay for navBar-->
 <div class="overlay" id="overlay" onclick="toggleNav()"></div>
 </header>
-    <div class="hero">
-        <h1>How can we help you?</h1>
-        <p>Trusted answers for 2,000+ parents & students</p>
+<!-- ask and ans Section -->
+  <div class="faq-wrapper">
+    <div class="faq-header">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about Bugema Vocational Institute</p>
     </div>
 
-    <div class="search-card">
-        <span style="font-size:22px">🔍</span>
-        <input type="text" id="search" placeholder="Search fees, hostel, admission, jobs...">
+    <div class="faq-search">
+      <i class="fa fa-search"></i>
+      <input type="text" id="faqSearch" placeholder="Search question e.g. fees, hostel...">
     </div>
 
-    <div class="stats">
-        <div class="stat"><b>2k+</b><span>Students</span></div>
-        <div class="stat"><b>8</b><span>Courses</span></div>
-        <div class="stat"><b>98%</b><span>Job Rate</span></div>
-        <div class="stat"><b>24/7</b><span>Support</span></div>
+    <div class="faq-cats">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="admission">Admission</button>
+      <button data-filter="fees">Fees & Payments</button>
+      <button data-filter="courses">Courses</button>
+      <button data-filter="hostel">Hostel & Life</button>
     </div>
 
-    <div class="container">
-        <div class="cats">
-            <button class="active" onclick="filterF('all',this)">✨ All Questions</button>
-            <button onclick="filterF('admission',this)">🎓 Admission</button>
-            <button onclick="filterF('fees',this)">💰 Fees</button>
-            <button onclick="filterF('courses',this)">🔧 Courses</button>
-            <button onclick="filterF('hostel',this)">🏠 Hostel & Safety</button>
-            <button onclick="filterF('jobs',this)">💼 Jobs & Certificate</button>
+    <div id="faqList">
+      <!-- Admission -->
+      <div class="faq-item" data-cat="admission">
+        <div class="faq-q">What are the admission requirements? <span class="icon"><i class="fa fa-plus"></i></span>
         </div>
-
-        <!-- Example Premium FAQ -->
-        <div class="faq" data-cat="fees">
-            <div class="faq-q" onclick="openF(this)">
-                <div class="left">
-                    <div class="icon-box">💰</div> How much are the fees & can I pay in installments?
-                </div>
-                <div class="plus">+</div>
-            </div>
-            <div class="faq-a">Fees is <b>UGX 600k - 800k per semester</b>. YES you can pay in installments: 50% to
-                start, rest later. No hidden charges. Hostel is separate UGX 400k. We give receipt for every payment.
-            </div>
+        <div class="faq-a">
+          <p>Minimum P.7 certificate for short courses and S.4 for diploma programs. Come with national ID, 2 passport
+            photos. No interview for most courses.</p>
         </div>
-
-        <div class="faq" data-cat="admission">
-            <div class="faq-q" onclick="openF(this)">
-                <div class="left">
-                    <div class="icon-box">🎓</div> What do I need to join? Do you need high grades?
-                </div>
-                <div class="plus">+</div>
-            </div>
-            <div class="faq-a">No high grades needed. We accept P7, S4, S6. Come with photocopy of results + National ID
-                + 2 passport photos. If you can read and write English, you qualify.</div>
+      </div>
+      <div class="faq-item" data-cat="admission">
+        <div class="faq-q">Can I apply online? <span class="icon"><i class="fa fa-plus"></i></span></div>
+        <div class="faq-a">
+          <p>Yes. Fill our online application form, you will receive SMS confirmation within 24hrs and your data is
+            securely stored in our database.</p>
         </div>
-
-        <div class="faq" data-cat="admission">
-            <div class="faq-q" onclick="openF(this)">
-                <div class="left">
-                    <div class="icon-box">📅</div> When is next intake & how long is course?
-                </div>
-                <div class="plus">+</div>
-            </div>
-            <div class="faq-a">Next intake: <b>January 2026</b>. 1 Year (Tailoring, Computer, Catering, Hair) and 2
-                Years (Electrical, Carpentry, Welding, Plumbing). Certificate on graduation day.</div>
+      </div>
+      <!-- Fees -->
+      <div class="faq-item" data-cat="fees">
+        <div class="faq-q">How much is tuition? Can I pay in installments? <span class="icon"><i
+              class="fa fa-plus"></i></span></div>
+        <div class="faq-a">
+          <p>Fees from UGX 450,000 per semester depending on course. We allow 2 installments: 60% on reporting, 40%
+            before exams. No extra charges.</p>
         </div>
-
-        <div class="faq" data-cat="hostel">
-            <div class="faq-q" onclick="openF(this)">
-                <div class="left">
-                    <div class="icon-box">🛡️</div> Is hostel safe for my daughter?
-                </div>
-                <div class="plus">+</div>
-            </div>
-            <div class="faq-a">100% safe. Christian university, fenced, 24hr security, separate hostels for boys/girls,
-                Matron & Warden inside, curfew 9pm. Parents can visit anytime. This is why many parents choose us.</div>
+      </div>
+      <div class="faq-item" data-cat="fees">
+        <div class="faq-q">Is there bursary? <span class="icon"><i class="fa fa-plus"></i></span></div>
+        <div class="faq-a">
+          <p>Yes, partial bursaries for needy students and Adventist members. Apply through Principal's office with LC1
+            letter.</p>
         </div>
-
-        <div class="faq" data-cat="courses">
-            <div class="faq-q" onclick="openF(this)">
-                <div class="left">
-                    <div class="icon-box">🔧</div> Do you give practical tools or just theory?
-                </div>
-                <div class="plus">+</div>
-            </div>
-            <div class="faq-a">80% practical. We have: 40 sewing machines, electrical lab, carpentry workshop with
-                timber, welding machines, 50 computers, modern kitchen. You touch tools from week 1.</div>
+      </div>
+      <!-- Courses -->
+      <div class="faq-item" data-cat="courses">
+        <div class="faq-q">Which courses do you offer? <span class="icon"><i class="fa fa-plus"></i></span></div>
+        <div class="faq-a">
+          <p>Plumbing, Electrical Installation, Tailoring & Fashion, Catering, Computer, Building & Construction,
+            Hairdressing. All certified by DIT & UBTEB.</p>
         </div>
-
-        <div class="faq" data-cat="jobs">
-            <div class="faq-q" onclick="openF(this)">
-                <div class="left">
-                    <div class="icon-box">📜</div> Which certificate will I get? Will I get job?
-                </div>
-                <div class="plus">+</div>
-            </div>
-            <div class="faq-a">Bugema University Certificate + DIT Certificate (National). 8 out of 10 students start
-                earning within 6 months - either job or own business. We add entrepreneurship + we link you to
-                companies.</div>
+      </div>
+      <div class="faq-item" data-cat="courses">
+        <div class="faq-q">How long are the courses? <span class="icon"><i class="fa fa-plus"></i></span></div>
+        <div class="faq-a">
+          <p>Short courses 3-6 months, Certificate 1 year, Diploma 2 years. All include industrial training.</p>
         </div>
-
-        <div class="trust">
-            <div>✅<b>80% Practical Training</b><span>Not theory</span></div>
-            <div>✅<b>DIT & University Certificate</b><span>National recognized</span></div>
-            <div>✅<b>Hostel & Security Inside</b><span>Safe for all</span></div>
+      </div>
+      <!-- Hostel -->
+      <div class="faq-item" data-cat="hostel">
+        <div class="faq-q">Do you have hostel? <span class="icon"><i class="fa fa-plus"></i></span></div>
+        <div class="faq-a">
+          <p>Yes, separate hostels for boys and girls inside campus, with security and matron. UGX 250,000 per semester
+            including meals.</p>
         </div>
-
+      </div>
     </div>
-    
+
+    <div class="no-result" id="noResult"><i class="fa fa-search" style="font-size:40px;margin-bottom:10px"></i><br>No
+      question found for your search.</div>
+  </div>
+
+  
 <footer class="site-footer">
     <div class="footer-main">
         <div class="footer-brand">
@@ -459,9 +332,9 @@
         <div class="footer-column footer-contact">
             <h2>Visit &amp; Contact</h2>
             <address>
-                <p><strong>Campus</strong><span>Bugema University, Luwero District<br>32 km along Gayaza-Zirobwe Road</span></p>
-                <p><strong>Phone</strong><span>0700 000 000 / 0775 000 000</span></p>
-                <p><strong>Email</strong><a href="mailto:vocational@bugemauniv.ac.ug">vocational@bugemauniv.ac.ug</a></p>
+                <p><strong>Campus</strong><span>Bugema University, Luwero District<br>33 km along Gayaza-Zirobwe Road</span></p>
+             <p><strong>Phone</strong><span>+256778905583/ +256753969357</span></p>
+                <p><strong>Email</strong><a href="mailto:bugemaunivocationalsch@gmail.com">Bugemaunivocationalsch@gmail.com</a></p>
             </address>
             <p class="footer-hours">Mon-Fri: 8am-5pm · Sat: 9am-1pm</p>
         </div>
@@ -470,64 +343,70 @@
         <p>&copy; Bugema University Vocational School</p>
         <a href="index.html">Back to home</a>
     </div>
+      <!-- WHATSAPP GREETING POPUP -->
+    <div id="wa-wrapper">
+        <div id="wa-popup">
+            <div class="wa-header">
+                <div
+                    style="width:38px; height:38px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                    🎓</div>
+                <div><b>Bugema Vocational</b><span>Online now - replies in 5 mins</span></div>
+                <div class="wa-close" onclick="closeWAPopup()">✕</div>
+            </div>
+            <div class="wa-body">
+                <div class="wa-msg" id="wa-greet-msg">
+                    Hello! ☀️<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>•
+                        Fees? • Admission? • Hostel?</small>
+                </div>
+                <div class="wa-time">✓✓ Online • Fast reply</div>
+                <a id="wa-go-btn"
+                    href="https://wa.me/256772000000?text=Hello%20Bugema%20Vocational%2C%20I%20need%20info%20about%20admission.%20My%20name%20is%20"
+                    target="_blank">💬 Continue to WhatsApp</a>
+                <p style="font-size:10px; color:#666; text-align:center; margin-top:10px;">Opens WhatsApp with greeting
+                    ready</p>
+            </div>
+        </div>
+        <div id="wa-btn" onclick="toggleWAPopup()"><span style="font-size:28px">💬</span><span class="wa-notif">1</span>
+        </div>
+    </div>
+
 </footer>
-<!-- PREMIUM WhatsApp with Greeting Popup -->
-<div id="wa-wrapper">
-  <!-- Greeting Popup -->
-  <div id="wa-popup">
-    <div class="wa-header">
-      <img src="https://bugemauniv.ac.ug/wp-content/uploads/2020/10/bugema-logo.png" alt="logo" onerror="this.style.display='none'">
-      <div>
-        <b>Bugema Vocational</b>
-        <span>Typically replies in 5 mins</span>
-      </div>
-      <div class="wa-close" onclick="closeWAPopup()">✕</div>
-    </div>
-    <div class="wa-body">
-      <div class="wa-msg">
-        Hello! 👋 <br>
-        Welcome to Bugema Vocational Institute.<br><br>
-        How can we help you today? <br>
-        <small>• Courses & Fees? • Admission? • Hostel?</small>
-      </div>
-      <div class="wa-time">Online now • Green • Fast reply</div>
-      <a id="wa-go-btn" href="https://wa.me/256772000000?text=Hello%20Bugema%20Vocational%2C%20I%20need%20info%20about%20your%20courses.%20My%20name%20is%20" target="_blank">
-        💬 Continue to WhatsApp
-      </a>
-      <p class="wa-note">Clicking will open WhatsApp app with greeting message ready</p>
-    </div>
-  </div>
-
-  <!-- Floating Button -->
-  <div id="wa-btn" onclick="toggleWAPopup()">
-    <span class="wa-icon">💬</span>
-    <span class="wa-notif">1</span>
-  </div>
-</div>
-
     <script>
-        function openF(el) {
-            let box = el.parentElement;
-            let ans = box.querySelector('.faq-a');
-            document.querySelectorAll('.faq-a').forEach(a => { if (a !== ans) a.classList.remove('show') });
-            document.querySelectorAll('.faq').forEach(f => { if (f !== box) f.classList.remove('active') });
-            ans.classList.toggle('show');
-            box.classList.toggle('active');
-        }
-        function filterF(cat, btn) {
-            document.querySelectorAll('.cats button').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.faq').forEach(f => {
-                f.style.display = (cat == 'all' || f.dataset.cat == cat) ? 'block' : 'none';
-            });
-        }
-        document.getElementById('search').addEventListener('input', function () {
-            let q = this.value.toLowerCase();
-            document.querySelectorAll('.faq').forEach(f => {
-                f.style.display = f.innerText.toLowerCase().includes(q) ? 'block' : 'none';
-            });
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        const wasActive = item.classList.contains('active');
+        items.forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Search
+    document.getElementById('faqSearch').addEventListener('input', function () {
+      const q = this.value.toLowerCase();
+      let visible = 0;
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = text.includes(q);
+        item.style.display = show ? 'block' : 'none';
+        if (show) visible++;
+      });
+      document.getElementById('noResult').style.display = visible == 0 ? 'block' : 'none';
+    });
+
+    // Filter
+    document.querySelectorAll('.faq-cats button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.faq-cats button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(item => {
+          item.style.display = (f == 'all' || item.dataset.cat == f) ? 'block' : 'none';
         });
-    </script>
+      });
+    });
+  </script>
+    
     <script src="js/script.js"></script>
 </body>
 

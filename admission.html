@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions Open | Bugema University Vocational School Uganda</title>
     <meta name="description" content="Apply to Bugema University Vocational School in Uganda. Explore admissions requirements, fees, deadlines, and how to enroll in practical vocational courses.">
-    <meta name="keywords" content="vocational school admissions Uganda, apply to vocational school Uganda, technical school admission Luwero, BUGEMA vocational enrollment">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Admissions Open at Bugema University Vocational School">
     <meta property="og:description" content="Join a vocational school in Uganda focused on practical training, confidence, and career growth.">
@@ -18,102 +17,10 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
 
-        .hero {
-            background:radial-gradient(600px at 50% -10%,rgba(212,160,23,0.25), transparent), linear-gradient(180deg,#111111 0%,#000000 100%) !important;
-            padding: 100px 20% 100px 5%;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.08);
-              background:radial-gradient(circle at center , rgba(212,160,23,0.18) 0%,rgba(212,160,23,0.8) 30%,rgba(212,160,23,0.2) 60%, transparent 70%);
-            border-radius: 50%;
-            top: -150px;
-            right: -100px;
-            filter: blur(40px);
-        }
-
-        .hero h1 {
-           margin-top: 100px;
-           text-align: center;
-            font-size: 44px;
-            font-weight: 800;
-            position: relative;
-        }
-
-        .hero p {
-            margin-top: 15px;
-            font-size: 18px;
-            opacity: 0.95;
-            position: relative;
-        }
-
-        .hero-badge {
-            margin-top: 20px;
-            display: inline-block;
-            border: 1px solid rgba(212, 160, 23, 0.3);
-             border-left: 3px solid #D4A017;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            position: relative;
-        }
-
-        .info-card {
-            max-width: 1100px;
-             background: #f7f7f9 !important;
-            border-left: 3px solid #D4A017;
-            margin: -60px auto 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 10;
-        }
-
-        .info-card div {
-            text-align: center;
-            border-right: 3px solid black;
-        }
-
-        .info-card div:last-child {
-            border: none;
-        }
-
-        .info-card b {
-            color: #7a5a00;
-            font-size: 20px;
-            display: block;
-        }
-
-        .info-card span {
-            font-size: 13px;
-            color: #666;
-            margin-top: 5px;
-            display: block;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        
 
         .section {
-            background: white;
+            background: #f2f6ff;
             border-radius: 20px;
             padding: 35px;
             margin-bottom: 25px;
@@ -182,7 +89,7 @@
         }
 
         .req-box {
-            background: #f8f9ff;
+            background: white;
             padding: 20px;
             border-radius: 12px;
             display: flex;
@@ -208,6 +115,12 @@
         .fees-table td {
             padding: 15px;
             border-bottom: 1px solid #f0f2f8;
+        }
+
+        .fees-table-wrapper {
+            max-width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .tag {
@@ -289,151 +202,38 @@
             }
         }
 
-        /* WhatsApp Greeting */
-        #wa-wrapper {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 99999;
-        }
-
-        #wa-btn {
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            position: relative;
-            animation: pulseWA 2s infinite;
-        }
-
-        @keyframes pulseWA {
-            0% {
-                transform: scale(1)
+        @media (max-width: 600px) {
+            .admission-hero {
+                padding: 150px 16px 48px !important;
             }
 
-            50% {
-                transform: scale(1.08)
+            .admission-hero h1 {
+                white-space: normal !important;
+                overflow-wrap: anywhere;
+                font-size: clamp(32px, 9vw, 42px) !important;
+                line-height: 1.05 !important;
+                letter-spacing: -1px !important;
             }
 
-            100% {
-                transform: scale(1)
+            .admission-hero p {
+                font-size: 16px !important;
+            }
+
+            .admission-hero .admission-promise {
+                max-width: 100%;
+                justify-content: center;
+                line-height: 1.5;
+            }
+
+            .admission-hero .admission-stat {
+                overflow-wrap: anywhere;
+            }
+
+            .fees-table {
+                min-width: 560px;
             }
         }
 
-        .wa-notif {
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            background: red;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            border: 2px solid white;
-        }
-
-        #wa-popup {
-            width: 320px;
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-            display: none;
-            margin-bottom: 15px;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1
-            }
-        }
-
-        .wa-header {
-            background: #0A3D9D;
-            color: white;
-            padding: 15px;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            position: relative;
-        }
-
-        .wa-header b {
-            display: block;
-            font-size: 14px;
-        }
-
-        .wa-header span {
-            font-size: 11px;
-            opacity: 0.8;
-        }
-
-        .wa-close {
-            position: absolute;
-            right: 12px;
-            top: 10px;
-            cursor: pointer;
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-
-        .wa-body {
-            padding: 15px;
-            background: #e5ddd5 url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-        }
-
-        .wa-msg {
-            background: white;
-            padding: 12px 15px;
-            border-radius: 0 12px 12px 12px;
-            font-size: 14px;
-            line-height: 1.5;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .wa-time {
-            font-size: 11px;
-            color: #666;
-            margin-top: 8px;
-            margin-left: 5px;
-        }
-
-        #wa-go-btn {
-            display: block;
-            margin-top: 18px;
-            background: #25D366;
-            color: white;
-            text-align: center;
-            padding: 13px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
     </style>
 </head>
 
@@ -458,7 +258,7 @@
 
   </div>
     <li class="home-active"><a  class="active ham-link" href="index.html"> <span>🏠</span>Home</a></li>
-    <li><a href="#"  class="ham-link"><span>📖</span>About Us ▼</a>
+    <li><a href="about.html"  class="ham-link"><span>📖</span>About Us ▼</a>
         <div class="dropdown">
         <a href="about.html">Who We Are</a>
          <a href="about.html#mission">Mission & Vision</a>
@@ -477,7 +277,7 @@
                     <a href="#">Computer</a>
                 </div>
     </li>
-    <li><a href="#" class="ham-link"><span>📚</span>Admission ▼</a>
+    <li><a href="admission.html" class="ham-link"><span>📚</span>Admission ▼</a>
        <div class="dropdown">
         <a href="#how">How to Apply</a>
         <a href="#req">Requirements</a>
@@ -494,43 +294,29 @@
 <!--Overlay for navBar-->
 <div class="overlay" id="overlay" onclick="toggleNav()"></div>
 </header>
+<!-- hero admin -->
+    <!-- HERO - PREMIUM WITH GOLD GLOW CIRCLES -->
+<section class="admission-hero" style="background:#302f2f; color:white; padding:200px 20px 70px; position:relative; overflow:hidden;">
+  <!-- Your 2 gold glow circles -->
+  <div style="position:absolute; right:-100px; top:-80px; width:700px; height:700px; border-radius:50%; background:radial-gradient(circle, rgba(212,160,23,0.18) 0%, rgba(212,160,23,0.05) 35%, transparent 70%); filter:blur(30px);"></div>
+  <div style="position:absolute; right:80px; top:80px; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(212,160,23,0.12), transparent 60%); filter:blur(20px);"></div>
 
-    <div class="hero">
-        <h1>Admissions Open - January 2026</h1>
-        <p>Join 2,000+ students gaining hands-on skills for self-employment</p>
-        <div class="hero-badge">⚡ No Interview • No High Grades • Hostel Available</div>
+  <div style="max-width:1100px; margin:auto; position:relative; z-index:2;">
+    <div style="max-width:640px;">
+      <div style="display:inline-block; border:1px solid rgba(212,160,23,0.3); color:#FDE68A; background:rgba(253,230,138,0.08); padding:6px 14px; border-radius:100px; font-size:11px; font-weight:600; letter-spacing:0.5px;">● Admissions Open 2026</div>
+      <h1 style=" white-space: nowrap; font-size:54px; font-weight:800; line-height:0.95; letter-spacing:-1.8px; margin:20px 0 14px;">Admissions Open January 2026</h1>
+      <p style="color:#a1a1aa; font-size:18px; line-height:1.5; margin:0;">Join 2,000+ students gaining hands-on skills for self-employment</p>
+      <div class="admission-promise" style="display:inline-flex; margin-top:22px; background:#FDE68A; color:#000; padding:9px 16px; border-radius:100px; font-weight:600; font-size:13px;">No Interview • No High Grades • Hostel Available</div>
     </div>
 
-    <div class="info-card">
-        <div><b>2 Intakes</b><span>Jan & June</span></div>
-        <div><b>UGX 20k</b><span>Application</span></div>
-        <div><b>1-2 Years</b><span>Certificate</span></div>
-        <div><b>80% Practical</b><span>Workshop</span></div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; margin-top:50px;">
+      <div class="admission-stat" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-top:1px solid rgba(212,160,23,0.25); border-radius:16px; padding:20px; backdrop-filter:blur(10px);"><div style="color:gold; font-size:11px; letter-spacing:1px; text-transform:uppercase;">Intake</div><div style="font-size:22px; font-weight:700; margin-top:6px;">2 Intakes Jan & June</div></div>
+      <div class="admission-stat" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-top:1px solid rgba(212,160,23,0.25); border-radius:16px; padding:20px; backdrop-filter:blur(10px);"><div style="color:gold; font-size:11px; letter-spacing:1px; text-transform:uppercase;">Fee</div><div style="font-size:22px; font-weight:700; margin-top:6px;">UGX 20k</div></div>
+      <div class="admission-stat" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-top:1px solid rgba(212,160,23,0.25); border-radius:16px; padding:20px; backdrop-filter:blur(10px);"><div style="color:gold; font-size:11px; letter-spacing:1px; text-transform:uppercase;">Duration</div><div style="font-size:22px; font-weight:700; margin-top:6px;">1-2 Years Cert.</div></div>
+      <div class="admission-stat" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-top:1px solid rgba(212,160,23,0.25); border-radius:16px; padding:20px; backdrop-filter:blur(10px);"><div style="color:gold; font-size:11px; letter-spacing:1px; text-transform:uppercase;">Training</div><div style="font-size:22px; font-weight:700; margin-top:6px;">80% Practical</div></div>
     </div>
-
-    <div class="container">
-        <div class="section" id="how">
-            <h2><span class="num">1</span> How to Apply - 3 Steps</h2>
-            <p class="sub">Apply in 10 minutes</p>
-            <div class="steps">
-                <div class="step">
-                    <div class="icon">📝</div>
-                    <h4>Fill Form</h4>
-                    <p style="font-size:13px; color:#666;">Online below or campus - 5 mins</p>
-                </div>
-                <div class="step">
-                    <div class="icon">💳</div>
-                    <h4>Pay 20k</h4>
-                    <p style="font-size:13px; color:#666;">MTN/Airtel Money or Accounts</p>
-                </div>
-                <div class="step">
-                    <div class="icon">✅</div>
-                    <h4>Report</h4>
-                    <p style="font-size:13px; color:#666;">ID + Results - Letter same day</p>
-                </div>
-            </div>
-        </div>
-
+  </div>
+</section>
         <div class="section" id="req">
             <h2><span class="num">2</span> Entry Requirements</h2>
             <div class="req-grid">
@@ -549,6 +335,7 @@
 
         <div class="section" id="fees">
             <h2><span class="num">3</span> Fees Structure 2026</h2>
+            <div class="fees-table-wrapper" role="region" aria-label="Fees structure table" tabindex="0">
             <table class="fees-table">
                 <tr>
                     <th>Course</th>
@@ -587,44 +374,13 @@
                     <td></td>
                 </tr>
             </table>
+            </div>
             <div class="note">💡 <b>Installments:</b> 50% first week, balance in 2 months. Hostel 400k/sem. No student
                 chased if on plan.</div>
         </div>
 
-        <div class="section" id="apply">
-            <h2><span class="num">4</span> Apply Online</h2>
-            <p class="sub">We reply in 2 hours on WhatsApp</p>
-            <form onsubmit="applyNow(event)">
-                <div class="form-grid">
-                    <input type="text" placeholder="Full Name *" required>
-                    <input type="tel" placeholder="Phone / WhatsApp *" required>
-                    <select required>
-                        <option value="">Choose Course *</option>
-                        <option>Tailoring</option>
-                        <option>Electrical</option>
-                        <option>Carpentry</option>
-                        <option>Welding</option>
-                        <option>Computer</option>
-                    </select>
-                    <select required>
-                        <option value="">Education *</option>
-                        <option>P.7</option>
-                        <option>S.4</option>
-                        <option>S.6</option>
-                    </select>
-                    <select class="full">
-                        <option>Need Hostel? Yes/No</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                    <textarea class="full" rows="3" placeholder="Question?"></textarea>
-                </div>
-                <button class="submit-btn">Submit → Open WhatsApp</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- WHATSAPP GREETING POPUP -->
+   
+<!-- WHATSAPP GREETING POPUP -->
     <div id="wa-wrapper">
         <div id="wa-popup">
             <div class="wa-header">
@@ -636,7 +392,7 @@
             </div>
             <div class="wa-body">
                 <div class="wa-msg" id="wa-greet-msg">
-                    Good morning! ☀️<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>•
+                    Hello! ☀️<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>•
                         Fees? • Admission? • Hostel?</small>
                 </div>
                 <div class="wa-time">✓✓ Online • Fast reply</div>
@@ -650,7 +406,6 @@
         <div id="wa-btn" onclick="toggleWAPopup()"><span style="font-size:28px">💬</span><span class="wa-notif">1</span>
         </div>
     </div>
-
 
 <footer class="site-footer">
     <div class="footer-main">
@@ -681,9 +436,9 @@
         <div class="footer-column footer-contact">
             <h2>Visit &amp; Contact</h2>
             <address>
-                <p><strong>Campus</strong><span>Bugema University, Luwero District<br>32 km along Gayaza-Zirobwe Road</span></p>
-                <p><strong>Phone</strong><span>0700 000 000 / 0775 000 000</span></p>
-                <p><strong>Email</strong><a href="mailto:vocational@bugemauniv.ac.ug">vocational@bugemauniv.ac.ug</a></p>
+                <p><strong>Campus</strong><span>Bugema University, Luwero District<br>33 km along Gayaza-Zirobwe Road</span></p>
+                <p><strong>Phone</strong><span>+256778905583/ +256753969357</span></p>
+                <p><strong>Email</strong><a href="mailto:bugemaunivocationalsch@gmail.com">Bugemaunivocationalsch@gmail.com</a></p>
             </address>
             <p class="footer-hours">Mon-Fri: 8am-5pm · Sat: 9am-1pm</p>
         </div>
@@ -704,10 +459,10 @@
         function toggleWAPopup() { let p = document.getElementById('wa-popup'); p.style.display = waOpen ? 'none' : 'block'; waOpen = !waOpen; }
         function closeWAPopup() { document.getElementById('wa-popup').style.display = 'none'; waOpen = false; }
         setTimeout(() => { if (!localStorage.getItem('waShown')) { document.getElementById('wa-popup').style.display = 'block'; waOpen = true; localStorage.setItem('waShown', 'yes'); } }, 8000);
-        let hr = new Date().getHours(); let gr = hr < 12 ? "Good morning! ☀️" : hr < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
+        let hr = new Date().getHours(); let gr = hr < 12 ? "Hello! ☀️" : hr < 18 ? "Good afternoon! 🌤️" : "Good evening! 🌙";
         document.getElementById('wa-greet-msg').innerHTML = gr + "<br>Welcome to Bugema Vocational.<br><br>How can we help you today?<br><small>• Fees? • Admission? • Hostel?</small>";
     </script>
-
+<script src="js/script.js"></script>
 </body>
 
 </html>
